@@ -1,10 +1,15 @@
+import { useSelector } from "react-redux";
+import { selectWalkers } from "../selectors";
 import WalkerView from "../WalkerView/WalkerView";
 
 
 function WalkersList(): JSX.Element {
+  const walkers = useSelector(selectWalkers)
   return (
     <div>
-      <WalkerView />
+      {walkers.map((walker) => (
+        <WalkerView key={walker.id} walker={walker} />
+      ))}
     </div>
   )
 }
