@@ -1,0 +1,51 @@
+.container {
+  text-align: left;
+  position: relative;
+}
+
+.title {
+  max-width: 400px;
+  margin: 0;
+  padding: 150px 10% 80px;
+  font-size: 35px;
+}
+
+.about {
+  margin: 0 150px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 100px;
+  justify-content: space-around;
+}
+
+.item {
+  width: 500px;
+  display: flex;
+  font-size: 20px;
+  gap: 30px;
+  align-items: center;
+}
+
+.heart {
+  width: 50px;
+}
+
+.text {
+  font-size: 25px;
+  margin: 0;
+}
+
+.bone {
+  max-width: 300px;
+  position: absolute;
+  top: 50px;
+  right: 40px;
+}
+
+.boneTwo {
+  max-width: 250px;
+  position: absolute;
+  top: 200px;
+  right: 120px;
+  transform: rotate(-3deg);
+}
