@@ -6,7 +6,7 @@ function GreetingPage(): JSX.Element {
     <section className={style.container}>
       <div className={style.greeting}>
         <h4 className={style.logo}>dogwalk</h4>
-        <h1 className={style.title}>Безопасный выгул и&nbsp;передержка собак в&nbsp;Санкт&#8209;Петербурге</h1>
+        <h1 className={style.title}><span className={style.span}>Безопасный</span> выгул и&nbsp;передержка собак в&nbsp;Санкт&#8209;Петербурге</h1>
         <form className={style.form}>
           <TextField id="outlined-basic" label="+7 (999) 999-99-99" variant="outlined" />
           <button className={style.button}>попробовать</button>
