@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './ReviewCard.module.css';
 import quotesIcon from '../img/quotes.svg';
-import avatar from '../img/avatar1.png';
 import Review from '../types/Review';
 
 type ReviewProps = {

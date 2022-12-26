@@ -73,8 +73,8 @@ export default function Questions(): JSX.Element {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ backgroundColor: '#f8efe8', paddingTop: '2vh', paddingBottom: '7vh' }}>
-        <Box sx={{ width: '70%', marginLeft: 'auto', marginRight: 'auto' }}>
-          <h3>Возможно, у Вас возникли вопросы</h3>
+        <Box sx={{  marginLeft: '10%', marginRight: '10%' }}>
+          <h3 style={{marginBottom: '10vh'}}>Возможно, у Вас возникли вопросы</h3>
           <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 8 }}>
             <Grid item xs={6}>
               <Accordion style={{borderRadius: '10px'}} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>

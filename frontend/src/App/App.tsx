@@ -15,6 +15,7 @@ function App(): JSX.Element {
       <AboutPage />
       <Questions />
       <ReviewPage />
+      <WalkersList />
     </div>
   );
 }
