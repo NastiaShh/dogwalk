@@ -14,12 +14,17 @@
 }
 
 .title {
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-weight: bold;
+}
+
+.rating {
+  margin-top: 1vh;
 }
 
 .quotesIconSvg {
   width: 2vw;
+  margin-top: 2.5vh;
 }
 
 .avatarImg {
@@ -29,5 +34,6 @@
 
 .text {
   text-align: left;
-  font-size: 0.8em;
+  font-size: 0.75em;
+  /* margin-top: 2vh; */
 }
