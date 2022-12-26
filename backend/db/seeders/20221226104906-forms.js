@@ -32,6 +32,6 @@ module.exports = {
   },
 
   async down() {
-    await Walker.destroy({ truncate: { cascade: true } });
+    await ApplicationForm.destroy({ truncate: { cascade: true } });
   },
 };
