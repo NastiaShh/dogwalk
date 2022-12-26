@@ -3,6 +3,7 @@ const express = require('express');
 const expressConfig = require('./config/express');
 
 const walkersRouter = require('./routes/walkers.router')
+const applicationFormsRouter = require('./routes/applicationForms.router')
 
 const app = express();
 
@@ -10,6 +11,7 @@ expressConfig(app);
 
 // подключаем маршрутизацию
 app.use('/api/walkers', walkersRouter)
+app.use('/api/forms', applicationFormsRouter)
 
 // eslint-disable-next-line prefer-destructuring
 const PORT = process.env.PORT;
