@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 const session = require('express-session');
 const sessionConfig = require('./sessionConfig');
 const getUser = require('../middlewares/getUser');
@@ -19,7 +20,7 @@ function expressConfig(app) {
   app.use(express.json()); // тело запроса, распарсить => req.body
 
   // настраиваем статические файлы из папки public
-  // app.use(express.static(path.join(__dirname, '../public')));
+  app.use(express.static(path.join(__dirname, '../../frontend/build')));
 
   app.use(getUser);
 }

@@ -47,7 +47,7 @@
 
 .nav {
   height: max-content;
-  margin: 30px 10vw;
+  margin: 30px 5vw;
   display: flex;
   gap: 30px;
 }
@@ -55,5 +55,5 @@
 .link {
   text-decoration: none;
   color: #FF9A16;
-  font-weight: 600;
+  font-size: 16px;
 }
