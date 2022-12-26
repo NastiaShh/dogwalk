@@ -12,6 +12,33 @@ import AddIcon from '@mui/icons-material/Add';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+const questions = [
+  {
+    question: 'Сколько стоит прогулка и как происходит оплата?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+  {
+    question: 'Кто ваши выгульщики?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+  {
+    question: 'Какие гарантии, что с собакой всё будет в порядке?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+  {
+    question: 'Вы можете покормить собаку после прогулки?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+  {
+    question: 'Вы можете помыть лапы собаке после прогулки?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+  {
+    question: 'Вы заключаете договор?',
+    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+  },
+];
+
 const theme = createTheme({
   typography: {
     "fontFamily": `"Roboto", "Helvetica", "Arial", sans-serif`,
@@ -45,68 +72,18 @@ export default function Questions(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <h3>Возможно, у Вас возникли вопросы</h3>
-      <Box sx={{ width: '70%' }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6}>
-            <Accordion style={{borderRadius: '10px'}}>
-              <AccordionSummary
-                expandIcon={<AddIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Сколько стоит прогулка и как происходит оплата?</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                  malesuada lacus ex, sit amet blandit leo lobortis eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-          <Grid item xs={6}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<AddIcon />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
-              >
-                <Typography>Кто ваши выгульщики?</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                  malesuada lacus ex, sit amet blandit leo lobortis eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-          <Grid item xs={6}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<AddIcon />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
-              >
-                <Typography>Какие гарантии, что с собакой всё будет в порядке?</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                  malesuada lacus ex, sit amet blandit leo lobortis eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-          <Grid item xs={6}>
-            <Accordion>
+      <div style={{ backgroundColor: '#f8efe8', paddingTop: '2vh', paddingBottom: '7vh' }}>
+        <Box sx={{ width: '70%', marginLeft: 'auto', marginRight: 'auto' }}>
+          <h3>Возможно, у Вас возникли вопросы</h3>
+          <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 8 }}>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
                 >
-                  <Typography>Вы можете покормить собаку после прогулки?</Typography>
+                  <Typography>Сколько стоит прогулка и как происходит оплата?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -115,15 +92,15 @@ export default function Questions(): JSX.Element {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-          </Grid>
-          <Grid item xs={6}>
-            <Accordion>
+            </Grid>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
-                  <Typography>Вы можете помыть лапы собаке после прогулки?</Typography>
+                  <Typography>Кто ваши выгульщики?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -132,15 +109,15 @@ export default function Questions(): JSX.Element {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-          </Grid>
-          <Grid item xs={6}>
-            <Accordion>
+            </Grid>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
-                  <Typography>Вы заключаете договор?</Typography>
+                  <Typography>Какие гарантии, что с собакой всё будет в порядке?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -149,9 +126,62 @@ export default function Questions(): JSX.Element {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+            </Grid>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+                  <AccordionSummary
+                    expandIcon={<AddIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header"
+                  >
+                    <Typography>Вы можете покормить собаку после прогулки?</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                      malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+            </Grid>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+                  <AccordionSummary
+                    expandIcon={<AddIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header"
+                  >
+                    <Typography>Вы можете помыть лапы собаке после прогулки?</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                      malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+            </Grid>
+            <Grid item xs={6}>
+              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+                  <AccordionSummary
+                    expandIcon={<AddIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header"
+                  >
+                    <Typography>Вы заключаете договор?</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                      malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+            </Grid>
           </Grid>
-        </Grid>
-      </Box>
+        </Box>
+      </div>
+      
     </ThemeProvider>
   );
 }
