@@ -1,9 +1,5 @@
-import { useState } from 'react'
 import { Avatar, Box, Stack, Typography, Rating } from '@mui/material'
 import PetsIcon from '@mui/icons-material/Pets';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useTheme } from '@mui/material/styles';
 import Walker from '../types/Walker';
 
 type WalkersProps = {
@@ -12,12 +8,6 @@ type WalkersProps = {
 
 
 function WalkerView({ walker }: WalkersProps): JSX.Element {
-
-  const [name, setName] = useState(walker.name)
-  const [photo, setPhoto] = useState(walker.photo)
-  const [description, setDescription] = useState(walker.description)
-  const [rating, setRating] = useState(walker.rating)
-
   // const handleChange = (
   //   _event: React.ChangeEvent<{}>,
   //   newValue: number
