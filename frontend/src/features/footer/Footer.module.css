@@ -1,0 +1,56 @@
+.container {
+  background-color: #398a6a;
+  padding: 5vh 4vw 3vh;
+  text-align: left;
+  font-size: 0.75em;
+  display: flex;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.icon {
+  width: 1.5em;
+  margin-right: 1.3em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+
+.emailText {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 3.5em;
+}
+
+.copyright {
+  font-weight: bold;
+}
+
+.references {
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ref {
+  display: flex;
+  width: 25vw;
+  justify-content: space-between;
+}
+
+.a {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid;
+}
+
+.a:hover {
+  color: #ff9a16;
+  cursor: pointer;
+}
+
+.userPolicy {
+  margin-left: 3em;
+} 

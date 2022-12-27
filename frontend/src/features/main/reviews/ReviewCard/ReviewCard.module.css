@@ -1,0 +1,39 @@
+.card {
+  width: 20vw;
+  padding: 3vh 2vw;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.info {
+  text-align: left;
+}
+
+.head {
+  display: flex;
+}
+
+.title {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.rating {
+  margin-top: 1vh;
+}
+
+.quotesIconSvg {
+  width: 2vw;
+  margin-top: 2.5vh;
+}
+
+.avatarImg {
+  border-radius: 50%;
+  width: 7vw;
+}
+
+.text {
+  text-align: left;
+  font-size: 0.75em;
+  /* margin-top: 2vh; */
+}

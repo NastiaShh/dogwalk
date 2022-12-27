@@ -26,7 +26,7 @@ function ApplicationForm({ onAddRequest }: RequestsProps): JSX.Element {
 
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form>
       <div>
         <h1>Записаться на консультацию</h1>
         <input

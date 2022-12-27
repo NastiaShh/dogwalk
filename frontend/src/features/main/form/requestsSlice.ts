@@ -11,10 +11,10 @@ export const loadRequest = createAsyncThunk('requests/loadRequests', async () =>
   return requests
 })
 
-export const createRequest = createAsyncThunk('requests/createRequest', async () => {
-  const requests = await api.createRequest()
-  return requests
-})
+// export const createRequest = createAsyncThunk('requests/createRequest', async () => {
+//   const requests = await api.createRequest()
+//   return requests
+// })
 
 const requestsSlice = createSlice({
   name: 'requests',
@@ -26,7 +26,7 @@ const requestsSlice = createSlice({
         const requests = action.payload
         state.requests = requests
       })
-      .addCase()
+      // .addCase()
   },
 })
 
