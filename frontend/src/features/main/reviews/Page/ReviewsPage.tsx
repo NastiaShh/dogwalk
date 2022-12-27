@@ -9,7 +9,6 @@ import style from './ReviewsPage.module.css';
 import avatar1 from '../img/avatar1.png';
 import avatar2 from '../img/avatar2.png';
 import avatar3 from '../img/avatar3.png';
-import quotesIcon from '../img/quotes.svg';
 
 export default function ReviewsPage(): JSX.Element {
   // const reviews = useSelector(selectReviews);
