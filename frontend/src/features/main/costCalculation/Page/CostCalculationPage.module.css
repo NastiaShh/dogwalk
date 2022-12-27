@@ -1,0 +1,12 @@
+.container {
+  background-color: #f8efe8;
+  padding-top: 8vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 8vh;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 10vh;
+}
