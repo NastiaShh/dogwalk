@@ -41,6 +41,16 @@
   justify-content: space-between;
 }
 
+.a {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid;
+}
+
+.a:hover {
+  color: #ff9a16;
+  cursor: pointer;
+}
+
 .userPolicy {
   margin-left: 3em;
 } 
