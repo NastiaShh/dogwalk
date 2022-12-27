@@ -6,30 +6,30 @@ import tiktokIcon from './img/tiktokIcon.svg';
 export default function Footer(): JSX.Element {
   return (
     <div className={style.container}>
-      <div>
-        <div>
+      <div className={style.contacts}>
+        <div className={style.title}>
           Контакты
         </div>
         <div>
-          <img src={youtubeIcon} alt={'YouTube'} />
-          <img src={vkIcon} alt={'VKontakte'} />
-          <img src={tiktokIcon} alt={'TikTok'} />
+          <img className={style.icon} src={youtubeIcon} alt={'YouTube'} />
+          <img className={style.icon} src={vkIcon} alt={'VKontakte'} />
+          <img className={style.icon} src={tiktokIcon} alt={'TikTok'} />
         </div>
-        <div>
+        <div className={style.emailText}>
           dogwalk@cool.ru
         </div>
-        <div>
+        <div className={style.copyright}>
           © 2018-2022 Dogwalk
         </div>
       </div>
-      <div>
-        <div>
+      <div className={style.references}>
+        <div className={style.ref}>
           <div>Услуги</div>
           <div>Стоимость</div>
           <div>Вопросы</div>
           <div>Отзывы</div>
         </div>
-        <div>Пользовательское соглашение</div>
+        <div className={style.userPolicy}>Пользовательское соглашение</div>
       </div>
     </div>
   );
