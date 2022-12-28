@@ -1,11 +1,11 @@
 import style from './CostCalculationPage.module.css';
-
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import DogWalkingTab from '../DogWalkingTab/DogWalkingTab';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -42,7 +42,7 @@ const TabPanel = styled(TabPanelUnstyled)(
   ({ theme }) => `
   width: 100%;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: 20px 12px;
   background: #fff;
   border-radius: 15px;
@@ -82,9 +82,11 @@ export default function CostCalculationPage(): JSX.Element {
           <Tab>Передержка</Tab>
           <Tab>Няня для собак</Tab>
         </TabsList>
-        <TabPanel value={0}>Выгул собак</TabPanel>
-        <TabPanel value={1}>Передержка</TabPanel>
-        <TabPanel value={2}>Няня для собак</TabPanel>
+        <TabPanel value={0}>
+          <DogWalkingTab />
+        </TabPanel>
+        <TabPanel value={1}>Передержка Overexposure of dogs</TabPanel>
+        <TabPanel value={2}>Няня для собак Dog sitter</TabPanel>
       </TabsContainer>
     </div>
   );
