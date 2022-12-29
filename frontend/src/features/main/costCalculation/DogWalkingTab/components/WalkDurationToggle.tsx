@@ -3,7 +3,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
-import style from './DogWalkingTab.module.css';
+import style from './WalkDurationToggle.module.css';
 
 const MyToggleButton = styled(ToggleButton)(
   ({ theme }) => `
@@ -33,14 +33,14 @@ const MyToggleButton = styled(ToggleButton)(
 
 const MyToggleButtonGroup = styled(ToggleButtonGroup)(
   ({ theme }) => `
-  width: 50%;
+  width: 73%;
   display: flex;
   justify-content: space-between;
   font-family: inherit;
   `,
 );
 
-export default function DogWalkingTab(): JSX.Element {
+export default function WalkDurationToggle(): JSX.Element {
   const [walkDuration, setWalkDuration] = React.useState('1 h');
 
   const handleChange = (

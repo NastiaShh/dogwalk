@@ -5,7 +5,7 @@ import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
-import DogWalkingTab from '../DogWalkingTab/DogWalkingTab';
+import DogWalkingTabPage from '../DogWalkingTab/Page/DogWalkingTabPage';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -83,7 +83,7 @@ export default function CostCalculationPage(): JSX.Element {
           <Tab>Няня для собак</Tab>
         </TabsList>
         <TabPanel value={0}>
-          <DogWalkingTab />
+          <DogWalkingTabPage />
         </TabPanel>
         <TabPanel value={1}>Передержка Overexposure of dogs</TabPanel>
         <TabPanel value={2}>Няня для собак Dog sitter</TabPanel>
