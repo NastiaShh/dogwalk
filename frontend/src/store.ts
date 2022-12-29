@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import reviewsSlice from './features/main/reviews/reviewsSlice';
 import requestsSlice from './features/main/form/requestsSlice';
 import walkersSlice from './features/walkers/walkersSlice';
+import authSlice from './features/auth/authSlice';
 
 const store = configureStore({
   // теперь функция combineReducers не нужна
@@ -11,6 +12,7 @@ const store = configureStore({
     reviews: reviewsSlice,
     walkers: walkersSlice,
     requests: requestsSlice,
+    auth: authSlice,
   }
 })
 
