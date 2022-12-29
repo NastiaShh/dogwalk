@@ -7,24 +7,32 @@ import PetsIcon from '@mui/icons-material/Pets';
 
 const marks = [
   {
+    value: 1,
+    label: '1',
+  },
+  {
+    value: 5,
+    label: '5',
+  },
+  {
     value: 10,
     label: '10',
+  },
+  {
+    value: 15,
+    label: '15',
   },
   {
     value: 20,
     label: '20',
   },
   {
+    value: 25,
+    label: '25',
+  },
+  {
     value: 30,
     label: '30',
-  },
-  {
-    value: 40,
-    label: '40',
-  },
-  {
-    value: 50,
-    label: '50',
   },
 ];
 
@@ -99,13 +107,10 @@ export default function RangeSlider(): JSX.Element {
       }}>
       Количество выгулов
     </div>
-    <div style={{
-      textAlign: 'left',
-      fontSize: '0.87em',
+    
+    <Box sx={{ 
+      width: '100%',
     }}>
-      *минимальное кол-во выгулов - 10 выгулов
-    </div>
-    <Box sx={{ width: '100%' }}>
       <MySlider
         slots={{ thumb: MyThumbComponent }}
         aria-label="Always visible"
@@ -114,8 +119,8 @@ export default function RangeSlider(): JSX.Element {
         step={1}
         marks={marks}
         valueLabelDisplay="auto"
-        min={10}
-        max={50}
+        min={1}
+        max={30}
       />
     </Box>
     </>
