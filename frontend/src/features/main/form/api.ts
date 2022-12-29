@@ -8,10 +8,10 @@ export async function loadRequest(): Promise<Request[]> {
   return result
 }
 
-export async function createRequest(name: string, phone: string, email: string): Promise<Request> {
+export async function createRequest(request: Request): Promise<Request> {
   const res = await fetch('/api/forms', {
     method: 'POST',
-    body: JSON.stringify({ name, phone, email }),
+    body: JSON.stringify(request),
     headers: {
       'Content-Type': 'application/json',
     },
