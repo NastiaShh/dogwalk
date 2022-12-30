@@ -3,10 +3,12 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const MyToggleButton = styled(ToggleButton)(
   ({ theme }) => `
-    border: none;
+    border: 1px solid transparent;
     border-radius: 50% !important;
     text-transform: none;
     background-color: inherit;
@@ -42,6 +44,15 @@ const MyToggleButtonGroup = styled(ToggleButtonGroup)(
   `,
 );
 
+const MyFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+  alignItems: 'flex-start',
+  '& .MuiFormControlLabel-label': {
+    fontSize: '1em',
+    color: '#545454',   
+  }
+  
+}));
+
 export default function DogsNumberToggle(): JSX.Element {
   const [dogsNumber, setDogsNumber] = React.useState(1);
 
@@ -57,15 +68,34 @@ export default function DogsNumberToggle(): JSX.Element {
   return (
     <>
     <div style={{
-      textAlign: 'left',
-      fontSize: '1.2em',
+      display: 'flex',
       marginTop: '2.5em',
+      fontSize: '1.2em',
+      justifyContent: 'space-between',
     }}>
-      Количество собак
+      <div>
+        Количество собак
+      </div>
+      <div>
+        <MyFormControlLabel control={
+            <Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+              style={{
+                color: '#398a6a',
+                padding: 0,
+                marginRight: '0.5em',
+              }}
+              // checked={checked}
+              // onChange={handleChange}
+              // inputProps={{ 'aria-label': 'controlled' }}
+            />
+          }
+          label="Первая пробная прогулка"
+        />
+      </div>
     </div>
+    
     <div>
       <MyToggleButtonGroup
-        color="primary"
         value={dogsNumber}
         exclusive
         onChange={handleChange}
