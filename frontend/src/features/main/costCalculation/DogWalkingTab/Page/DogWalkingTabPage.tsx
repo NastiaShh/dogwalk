@@ -2,6 +2,7 @@ import style from './DogWalkingTabPage.module.css';
 import WalkDurationToggle from "../components/WalkDurationToggle/WalkDurationToggle";
 import RangeSlider from '../components/RangeSlider/RangeSlider';
 import DogsNumberToggle from '../components/DogsNumberToggle/DogsNumberToggle';
+import CalculatedPrice from '../components/CalculatedPrice/CalculatedPrice';
 
 export default function DogWalkingTabPage(): JSX.Element {
   return (
@@ -9,6 +10,7 @@ export default function DogWalkingTabPage(): JSX.Element {
       <WalkDurationToggle />
       <RangeSlider />
       <DogsNumberToggle />
+      <CalculatedPrice />
     </div>    
   );
 };
