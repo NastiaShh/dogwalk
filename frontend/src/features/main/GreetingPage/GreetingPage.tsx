@@ -14,10 +14,10 @@ function GreetingPage(): JSX.Element {
         </form>
       </div>
       <nav className={style.nav}>
-        <a href="#" className={style.link}>Услуги</a>
-        <a href="#" className={style.link}>Стоимость</a>
-        <a href="#" className={style.link}>Вопросы</a>
-        <a href="#" className={style.link}>Отзывы</a>
+        <a href="#services" className={style.link}>Услуги</a>
+        <a href="#prices" className={style.link}>Стоимость</a>
+        <a href="#questions" className={style.link}>Вопросы</a>
+        <a href="#reviews" className={style.link}>Отзывы</a>
       </nav>
       <img src={dog} alt='dog' className={style.dog} />
     </section>
