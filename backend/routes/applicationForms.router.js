@@ -23,9 +23,8 @@ applicationFormsRouter.post('/', async (req, res) => {
     name: req.body.name,
     phone: req.body.phone,
     email: req.body.email,
-    status: req.body.status,
+    status: 'обрабатывается',
   });
-
   res.json(data);
 });
 
