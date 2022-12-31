@@ -4,18 +4,17 @@
 }
 
 .title {
-  max-width: 700px;
-  margin: 0;
-  padding: 150px 10% 80px;
-  font-size: 35px;
+  max-width: 450px;
+  margin: 0 170px;
+  padding: 150px 0 80px;
+  font-size: 40px;
 }
 
 .about {
-  margin: 0 150px 100px;
+  margin: 0 0 100px 13%;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px 100px;
-  justify-content: space-around;
+  gap: 30px 10%;
 }
 
 .item {
@@ -36,17 +35,17 @@
 }
 
 .bone {
-  max-width: 300px;
+  max-width: 350px;
   position: absolute;
-  top: 50px;
-  right: 40px;
+  top: 70px;
+  right: 60px;
 }
 
 .boneTwo {
-  max-width: 250px;
+  max-width: 270px;
   position: absolute;
-  top: 200px;
-  right: 120px;
+  top: 220px;
+  right: 180px;
   transform: rotate(-3deg);
 }
 
