@@ -41,6 +41,7 @@ const MyToggleButtonGroup = styled(ToggleButtonGroup)(
   display: flex;
   justify-content: space-between;
   font-family: inherit;
+  margin-left: -0.8em;
   `,
 );
 

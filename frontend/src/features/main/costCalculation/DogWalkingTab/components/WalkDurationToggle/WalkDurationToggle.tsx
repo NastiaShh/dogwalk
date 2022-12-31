@@ -13,7 +13,6 @@ const MyToggleButton = styled(ToggleButton)(
     background-color: #e6e6e6;
     font-size: 1.2em;
     padding: 0.3em 2em;
-    margin-top: 2em;
 
     &:hover {
       
