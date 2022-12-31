@@ -49,3 +49,24 @@
   right: 120px;
   transform: rotate(-3deg);
 }
+
+.decoration {
+  width: 40px;
+  position: absolute;
+  top: 130px;
+  left: 110px;
+}
+
+.decorationTwo {
+  width: 170px;
+  position: absolute;
+  top: 153px;
+  left: 455px;
+}
+
+.decorationThree {
+  width: 350px;
+  position: absolute;
+  top: 322px;
+  left: 160px;
+}
