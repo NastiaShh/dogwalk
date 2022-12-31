@@ -1,4 +1,5 @@
 import style from './GreetingPage.module.css';
+import dog from './images/dog.png';
 import { TextField } from '@mui/material';
 
 function GreetingPage(): JSX.Element {
@@ -18,6 +19,7 @@ function GreetingPage(): JSX.Element {
         <a href="#" className={style.link}>Вопросы</a>
         <a href="#" className={style.link}>Отзывы</a>
       </nav>
+      <img src={dog} alt='dog' className={style.dog} />
     </section>
   );
 }

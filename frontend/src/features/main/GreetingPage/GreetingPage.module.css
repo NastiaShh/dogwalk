@@ -57,3 +57,11 @@
   color: #FF9A16;
   font-size: 16px;
 }
+
+.dog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 122.5vh;
+  z-index: 0;
+}
