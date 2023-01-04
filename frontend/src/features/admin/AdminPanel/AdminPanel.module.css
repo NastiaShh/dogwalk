@@ -1,0 +1,17 @@
+.requests {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.requests_block {
+  width: 45%;
+  padding: 10px;
+}
+
+.request_head {
+  font-size: 16pt;
+  font-weight: 600;
+  width: 100%;
+}
