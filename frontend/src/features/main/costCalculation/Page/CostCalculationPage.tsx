@@ -85,8 +85,8 @@ export default function CostCalculationPage(): JSX.Element {
         <TabPanel value={0}>
           <DogWalkingTabPage />
         </TabPanel>
-        <TabPanel value={1}>Передержка Overexposure of dogs</TabPanel>
-        <TabPanel value={2}>Няня для собак Dog sitter</TabPanel>
+        <TabPanel value={1}><DogWalkingTabPage /></TabPanel>
+        <TabPanel value={2}><DogWalkingTabPage /></TabPanel>
       </TabsContainer>
     </div>
   );

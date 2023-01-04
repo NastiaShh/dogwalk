@@ -1,5 +1,4 @@
 import TextField from '@mui/material/TextField';
-import InputBase from '@mui/material/InputBase';
 
 export default function PhoneNameForm(): JSX.Element {
   return (
