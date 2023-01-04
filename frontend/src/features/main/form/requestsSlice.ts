@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import RequestState from './types/State';
 import * as api from './api';
+import Request from './types/Request';
 
 const initialState: RequestState = {
   requests: []
@@ -11,10 +12,10 @@ export const loadRequest = createAsyncThunk('requests/loadRequests', async () =>
   return requests
 })
 
-// export const createRequest = createAsyncThunk('requests/createRequest', async () => {
-//   const requests = await api.createRequest()
-//   return requests
-// })
+export const createRequest = createAsyncThunk('requests/createRequest', async (request: Request) => {
+  const requests = await api.createRequest(request)
+  return requests
+})
 
 const requestsSlice = createSlice({
   name: 'requests',
@@ -26,7 +27,9 @@ const requestsSlice = createSlice({
         const requests = action.payload
         state.requests = requests
       })
-      // .addCase()
+      .addCase(createRequest.fulfilled, (state, action) => {
+        state.requests.push(action.payload);
+      })
   },
 })
 

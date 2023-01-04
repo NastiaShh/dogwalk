@@ -47,7 +47,7 @@ export default function ReviewsPage(): JSX.Element {
   ]
 
   return (
-    <div className={style.reviewsContainer}>
+    <div className={style.reviewsContainer} id="reviews">
       <h3 className={style.title}>О нас говорят</h3>
       <Stack direction="row" spacing={4} sx={{justifyContent: 'center', paddingBottom: '10vh'}}>
         {loading ? (
