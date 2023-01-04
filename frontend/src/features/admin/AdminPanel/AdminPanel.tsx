@@ -4,6 +4,8 @@ import { useAppDispatch } from "../../../store"
 import { loadRequest } from "../../main/form/requestsSlice"
 import { selectRequests } from "../../main/form/selectors"
 import WalkRequest from "../WalkRequest/WalkRequest"
+import style from './AdminPanel.module.css';
+
 
 
 function AdminPanel(): JSX.Element {
@@ -15,10 +17,31 @@ function AdminPanel(): JSX.Element {
   }, [dispatch])
 
   return (
-    <div>
-      {requests.map((request) => (
-        <WalkRequest key={request.id} request={request} />
-      ))}
+    <div className={style.requests}>
+        <div className={style.requests_block}>
+          <div className={style.request_head}>Необработанные заявки</div>
+          {requests.length !== 0 ? (
+            requests.map((request) => request.status === 'обрабатывается' && (
+              <WalkRequest
+                key={request.id}
+                request={request}
+              />
+            ))
+          )
+            : (<div>Записей нет</div>)}
+        </div>
+        <div className={style.requests_block}>
+          <div className={style.request_head}>Обработанные заявки</div>
+          {requests.length !== 0 ? (
+            requests.map((request) => request.status === 'обработано' && (
+              <WalkRequest
+                key={request.id}
+                request={request}
+              />
+            ))
+          )
+            : (<div>Записей нет</div>)}
+        </div>
     </div>
   )
 }
