@@ -4,6 +4,7 @@ import AboutPage from './AboutPage/AboutPage';
 import ReviewPage from './reviews/Page/ReviewsPage';
 import Footer from '../footer/Footer';
 import CostCalculationPage from './costCalculation/Page/CostCalculationPage';
+import Page from './reviews/ReviewsSwiper/Page';
 
 
 function Main(): JSX.Element {
@@ -14,6 +15,7 @@ function Main(): JSX.Element {
       <CostCalculationPage/>
       <Questions />
       <ReviewPage />
+      <Page />
       <Footer />
     </div>
   );
