@@ -3,7 +3,7 @@ type Request = {
   name: string;
   phone: string;
   email: string;
-  status: boolean;
+  status: string;
 }
 
 export default Request
