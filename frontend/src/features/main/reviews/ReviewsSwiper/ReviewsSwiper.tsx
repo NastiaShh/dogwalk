@@ -19,6 +19,9 @@ import { selectReviews, selectLoadError, selectLoading } from '../selectors';
 import ReviewCard from '../ReviewCard/ReviewCard';
 import loadingImg from '../Page/img/loading.gif';
 
+import prevBtnEnabled from '../Page/img/prev-button-enabled.svg';
+import nextBtnEnabled from '../Page/img/next-button-enabled.svg';
+
 // import style from './ReviewsPage.module.css';
 import avatar1 from '../img/avatar1.png';
 import avatar2 from '../img/avatar2.png';
@@ -82,12 +85,19 @@ export default function SwiperPage(): JSX.Element {
   
   return (
     <div style={{
-      width: '80%'
-    }}>
+      width: '80%',
+      margin: 'auto'
+    }}> 
+        
+      
+
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        navigation={true}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
         // pagination={{
         //   clickable: true,
         // }}
@@ -108,6 +118,9 @@ export default function SwiperPage(): JSX.Element {
         modules={[Navigation]}
         className="mySwiper"
       >
+        <img className='swiper-button-prev' src={prevBtnEnabled} alt='previous' />
+        <img className='swiper-button-next' src={nextBtnEnabled} alt='next' />
+        
         {loading ? (
           <img src={loadingImg} alt="loading..." />
         ) : loadError ? (
