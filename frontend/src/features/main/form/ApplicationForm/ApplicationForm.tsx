@@ -31,6 +31,16 @@ function ApplicationForm(): JSX.Element {
           placeholder="email"
           {...register("email")}
         />
+        <input
+          type="date"
+          placeholder="date"
+          {...register("date")}
+        />
+        <input
+          type="time"
+          placeholder="time"
+          {...register("time")}
+        />
         <button type="submit">
           добавить
         </button>

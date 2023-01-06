@@ -19,7 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.TEXT,
     phone: DataTypes.TEXT,
     email: DataTypes.TEXT,
-    status: DataTypes.TEXT
+    status: DataTypes.TEXT,
+    date: DataTypes.DATE,
+    time: DataTypes.TIME,
   }, {
     sequelize,
     modelName: 'ApplicationForm',

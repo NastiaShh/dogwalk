@@ -28,6 +28,12 @@ module.exports = {
         email: 'mail@mail.com',
         status: 'обрабатывается',
       },
+      {
+        name: 'Kolya',
+        phone: 'x',
+        email: 'mail@mail.com',
+        status: 'обработано',
+      },
     ]);
   },
 
