@@ -22,6 +22,12 @@ module.exports = {
       status: {
         type: Sequelize.TEXT
       },
+      date: {
+        type: Sequelize.DATE
+      },
+      time: {
+        type: Sequelize.TIME
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
