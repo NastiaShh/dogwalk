@@ -17,6 +17,16 @@ export const createRequest = createAsyncThunk('requests/createRequest', async (r
   return requests
 })
 
+export const changeRequest = createAsyncThunk('requests/changeRequests', async (request: Request) => {
+  const requests = await api.changeRequest(request)
+  return requests
+})
+
+export const deleteRequest = createAsyncThunk('requests/deleteRequests', async (request: Request) => {
+  const requests = await api.deleteRequest(request)
+  return requests
+})
+
 const requestsSlice = createSlice({
   name: 'requests',
   initialState,
@@ -29,6 +39,20 @@ const requestsSlice = createSlice({
       })
       .addCase(createRequest.fulfilled, (state, action) => {
         state.requests.push(action.payload);
+      })
+      .addCase(changeRequest.fulfilled, (state, action) => {
+        state.requests = state.requests.map((req) => {
+          if (req.id === action.payload.id) {
+            return {
+              ...req,
+              status: action.payload.status
+            };
+          }
+          return req;
+        });
+      })
+      .addCase(deleteRequest.fulfilled, (state, action) => {
+        state.requests = state.requests.filter((req) => req.id !== Number(action.payload));
       })
   },
 })
