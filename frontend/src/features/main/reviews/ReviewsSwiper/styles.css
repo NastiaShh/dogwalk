@@ -4,13 +4,13 @@
   width: 100%;
   background: #f8efe8;
   position: relative;
-  /* padding-top: 6em; */
+  padding-top: 6em;
 }
 
-.swiper-wrapper {
+/* .swiper-wrapper {
   width: 80%;
   position: relative;
-}
+} */
 
 .swiper-slide {
   /* text-align: center;

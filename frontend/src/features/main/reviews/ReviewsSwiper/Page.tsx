@@ -10,6 +10,12 @@ export default function Page(): JSX.Element {
       <div>
         <h3 style={{
           marginTop: 0,
+          position: 'absolute',
+          zIndex: '2',
+          left: '0',
+          right: '0',
+          margin: 'auto',
+          width: 'fit-content',
         }}>
           О нас говорят
         </h3>
