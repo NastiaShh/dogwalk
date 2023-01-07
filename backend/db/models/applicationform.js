@@ -16,9 +16,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ApplicationForm.init({
-    name: DataTypes.TEXT,
-    phone: DataTypes.TEXT,
-    email: DataTypes.TEXT,
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    phone: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.TEXT,
+    },
     status: DataTypes.TEXT
   }, {
     sequelize,
