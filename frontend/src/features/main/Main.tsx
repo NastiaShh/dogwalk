@@ -1,10 +1,9 @@
 import Questions from './questions/Questions';
 import GreetingPage from './GreetingPage/GreetingPage';
 import AboutPage from './AboutPage/AboutPage';
-import ReviewPage from './reviews/Page/ReviewsPage';
+import ReviewsPage from './reviews/Page/ReviewsPage';
 import Footer from '../footer/Footer';
 import CostCalculationPage from './costCalculation/Page/CostCalculationPage';
-
 
 function Main(): JSX.Element {
   return (
@@ -13,7 +12,7 @@ function Main(): JSX.Element {
       <AboutPage />
       <CostCalculationPage/>
       <Questions />
-      <ReviewPage />
+      <ReviewsPage />
       <Footer />
     </div>
   );

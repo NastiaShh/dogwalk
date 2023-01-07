@@ -1,12 +1,15 @@
-.reviewsContainer {
+.reviewsSection {
   background-color: #f8efe8;
-  padding-top: 8vh;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 8vh;
+  padding-top: 2em;
+  padding-bottom: 5em;
 }
 
-.title {
+.headerText {
   margin-top: 0;
-  margin-bottom: 10vh;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
 }

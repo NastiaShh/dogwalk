@@ -1,6 +1,6 @@
 .card {
   width: 20vw;
-  padding: 3vh 2vw;
+  padding: 1em 1.6em;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -11,6 +11,7 @@
 
 .head {
   display: flex;
+  justify-content: space-between;
 }
 
 .title {
@@ -19,21 +20,55 @@
 }
 
 .rating {
-  margin-top: 1vh;
+  margin-top: 0.3em;
 }
 
 .quotesIconSvg {
-  width: 2vw;
-  margin-top: 2.5vh;
+  width: 1.8em;
+  margin-top: 0.9em;
 }
 
 .avatarImg {
   border-radius: 50%;
-  width: 7vw;
+  width: 5.3em;
+  margin-right: -0.2em;
 }
 
 .text {
   text-align: left;
   font-size: 0.75em;
-  /* margin-top: 2vh; */
 }
+
+@media (min-width: 1600px) and (max-width: 1680px) {
+  .card {
+    width: 20vw;
+    padding: 1em 1.3em;
+  }
+  
+  .avatarImg {
+    width: 5em;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .card {
+    width: 20vw;
+    padding: 1em 1em;
+  }
+  
+  .avatarImg {
+    width: 4.8em;
+  }
+
+  .quotesIconSvg {
+    width: 1.6em;
+  }
+}
+
+@media  (max-width: 1199px) {
+  .card {
+    padding: 1em 1.9em;
+    width: 15em;
+  }
+}
+
