@@ -2,11 +2,11 @@ import WalkDurationToggle from "../components/WalkDurationToggle/WalkDurationTog
 import RangeSlider from '../components/RangeSlider/RangeSlider';
 import DogsNumberToggle from '../components/DogsNumberToggle/DogsNumberToggle';
 import CalculatedPrice from '../components/CalculatedPrice/CalculatedPrice';
-import PhoneNameForm from '../components/PhoneNameForm/PhoneNameForm';
+// import PhoneNameForm from '../components/PhoneNameForm/PhoneNameForm';
 
 export default function DogWalkingTabPage(): JSX.Element {
   return (
-    <div 
+    <div
       style={{
         width: '70%',
         margin: '2em auto',
@@ -16,7 +16,7 @@ export default function DogWalkingTabPage(): JSX.Element {
       <RangeSlider />
       <DogsNumberToggle />
       <CalculatedPrice />
-      <PhoneNameForm />
+      {/* <PhoneNameForm /> */}
     </div>    
   );
 };

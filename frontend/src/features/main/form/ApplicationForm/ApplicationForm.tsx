@@ -2,6 +2,9 @@ import Request from '../types/Request'
 import { useForm } from "react-hook-form";
 import { createRequest } from '../requestsSlice';
 import { useAppDispatch } from '../../../../store';
+import style from './ApplicationForm.module.css';
+
+
 
 
 function ApplicationForm(): JSX.Element {
@@ -13,9 +16,10 @@ function ApplicationForm(): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <h1>Записаться на консультацию</h1>
+    <form onSubmit={handleSubmit(onSubmit)} className={style.container} id='form'>
+      <h1>Записаться на консультацию</h1>
+      <div className={style.block}>
+        <p className={style.text}>Остались вопросы или у Вас есть особые пожелания?<br></br>Заполните заявку и наш менеджер свяжется с Вами для уточнения всех деталей </p>
         <input
           type="text"
           placeholder="Имя"
@@ -23,7 +27,7 @@ function ApplicationForm(): JSX.Element {
         />
         <input
           type="tel"
-          placeholder="+7"
+          placeholder="+7 (999) 999-99-99"
           {...register("phone")}
         />
         <input
@@ -31,19 +35,10 @@ function ApplicationForm(): JSX.Element {
           placeholder="email"
           {...register("email")}
         />
-        <input
-          type="date"
-          placeholder="date"
-          {...register("date")}
-        />
-        <input
-          type="time"
-          placeholder="time"
-          {...register("time")}
-        />
-        <button type="submit">
-          добавить
+        <button type="submit" className={style.button}>
+          свяжитесь со мной
         </button>
+        <p className={style.bottom_text}>Обращаем ваше внимание, что заказ услуги возможен только<br></br> через наш сайт после регистрации</p>
       </div>
     </form>
   )

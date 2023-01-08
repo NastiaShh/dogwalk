@@ -1,7 +1,4 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 import Accordion from '@mui/material/Accordion';
@@ -11,33 +8,6 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-const questions = [
-  {
-    question: 'Сколько стоит прогулка и как происходит оплата?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-  {
-    question: 'Кто ваши выгульщики?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-  {
-    question: 'Какие гарантии, что с собакой всё будет в порядке?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-  {
-    question: 'Вы можете покормить собаку после прогулки?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-  {
-    question: 'Вы можете помыть лапы собаке после прогулки?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-  {
-    question: 'Вы заключаете договор?',
-    answer:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-  },
-];
 
 const theme = createTheme({
   typography: {
@@ -73,115 +43,109 @@ export default function Questions(): JSX.Element {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div id="questions" style={{ backgroundColor: '#f8efe8', paddingTop: '2vh', paddingBottom: '7vh' }}>
-        <Box sx={{  marginLeft: '10%', marginRight: '10%' }}>
-          <h3 style={{marginBottom: '10vh'}}>Возможно, у Вас возникли вопросы</h3>
+        <Box sx={{ marginLeft: '10%', marginRight: '10%' }}>
+          <h3 style={{ marginBottom: '10vh' }}>Возможно, у Вас возникли вопросы</h3>
           <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 8 }}>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>Сколько стоит прогулка и как происходит оплата?</Typography>
+                  <Typography>Как сделать заказ?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    Сделать заказ вы можете, обратившись по нашему номеру телефона, или самостоятельно оформить заказ на сайте. В течение 15 минут после отправления заявки с сайта с вами свяжется менеджер для уточнения информации.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh' }}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
-                  <Typography>Кто ваши выгульщики?</Typography>
+                  <Typography>Что такое передержка и кто такой догситтер?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    Передержка — это возможность оставить собаку в надежных руках на время вашего отсутствия по случаю отпуска или командировки. Человека, который присмотрит за вашим питомцем, и называют догситтер.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}>
                 <AccordionSummary
                   expandIcon={<AddIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
-                  <Typography>Какие гарантии, что с собакой всё будет в порядке?</Typography>
+                  <Typography>Сколько стоит прогулка?<br></br></Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    Стоимость 1 выгула составляет 650 руб. В эту сумму входят: прогулка 1 час; мытье лап и кормление собаки. При необходимости можно увеличить время выгула за дополнительную плату.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
-                  <AccordionSummary
-                    expandIcon={<AddIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography>Вы можете покормить собаку после прогулки?</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                      malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh' }}>
+                <AccordionSummary
+                  expandIcon={<AddIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Вы можете покормить собаку после прогулки?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Да, наши выгульщики могут покормить вашего питомца, если вы заранее подготовите миску с кормом. Кормление входит в состав услуги по выгулу. При оформлении заказа менеджер согласовывает с клиентом необходимость данной процедуры. При отказе от кормления стоимость выгула не меняется.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
-                  <AccordionSummary
-                    expandIcon={<AddIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography>Вы можете помыть лапы собаке после прогулки?</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                      malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh' }}>
+                <AccordionSummary
+                  expandIcon={<AddIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Вы можете помыть лапы собаке после прогулки?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Да, мытье лап входит в состав услуги по выгулу. При оформлении заказа менеджер согласовывает с клиентом необходимость данной процедуры. При отказе от мытья лап стоимость выгула не меняется.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{borderRadius: '10px'}} sx={{textAlign: 'left', paddingLeft: '1vw', minHeight: '11vh'}}>
-                  <AccordionSummary
-                    expandIcon={<AddIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography>Вы заключаете договор?</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                      malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
+              <Accordion style={{ borderRadius: '10px' }} sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}>
+                <AccordionSummary
+                  expandIcon={<AddIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Есть ли страхование в Гульдог?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Да, мы страхуем собак от травм, полученных на прогулке по вине выгульщика.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
           </Grid>
         </Box>
       </div>
-      
+
     </ThemeProvider>
   );
 }

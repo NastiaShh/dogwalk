@@ -1,3 +1,6 @@
+import style from '../../../Page/CostCalculationPage.module.css';
+
+
 export default function CalculatedPrice(): JSX.Element {
   return (
     <div style={{
@@ -15,6 +18,11 @@ export default function CalculatedPrice(): JSX.Element {
       }}>
         от 650 руб
       </span>
-    </div>    
+      <a href='#form' type="submit"
+        className={style.button}
+      >
+        узнать точную цену
+      </a>
+    </div>
   );
 };

@@ -44,6 +44,8 @@
 .a {
   padding-bottom: 0.3em;
   border-bottom: 1px solid;
+  text-decoration: none;
+  color: #303030;
 }
 
 .a:hover {

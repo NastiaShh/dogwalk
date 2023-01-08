@@ -4,13 +4,13 @@ import style from './ReviewsPage.module.css';
 
 export default function ReviewsPage(): JSX.Element {
   return (
-    <section className={style.reviewsSection} 
+    <section className={style.reviewsSection}
     >
-      <h3 className={style.headerText}>
+      <h3 className={style.headerText} id='reviews'>
         О нас говорят
-      </h3>        
-      
+      </h3>
+
       <ReviewsSwiper />
-    </section>    
+    </section>
   );
 };
