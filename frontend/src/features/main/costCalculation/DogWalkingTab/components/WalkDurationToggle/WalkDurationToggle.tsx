@@ -11,7 +11,7 @@ const MyToggleButton = styled(ToggleButton)(
     border-radius: 30px !important;
     text-transform: none;
     background-color: #e6e6e6;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 0.3em 2em;
 
     &:hover {
@@ -32,7 +32,7 @@ const MyToggleButton = styled(ToggleButton)(
 
 const MyToggleButtonGroup = styled(ToggleButtonGroup)(
   ({ theme }) => `
-  width: 73%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   font-family: inherit;

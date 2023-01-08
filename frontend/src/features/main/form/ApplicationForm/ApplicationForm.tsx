@@ -16,7 +16,7 @@ function ApplicationForm(): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={style.container}>
+    <form onSubmit={handleSubmit(onSubmit)} className={style.container} id='form'>
       <h1>Записаться на консультацию</h1>
       <div className={style.block}>
         <p className={style.text}>Остались вопросы или у Вас есть особые пожелания?<br></br>Заполните заявку и наш менеджер свяжется с Вами для уточнения всех деталей </p>

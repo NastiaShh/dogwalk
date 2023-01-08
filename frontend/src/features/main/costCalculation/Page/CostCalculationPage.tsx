@@ -75,7 +75,7 @@ const TabsContainer = styled(TabsUnstyled)(
 export default function CostCalculationPage(): JSX.Element {
   return (
     <div className={style.container}>
-      <h3 className={style.title}>Рассчитать стоимость</h3>
+      <h3 className={style.title} id='prices'>Рассчитать стоимость</h3>
       <TabsContainer defaultValue={0}>
         <TabsList>
           <Tab>Выгул собак</Tab>

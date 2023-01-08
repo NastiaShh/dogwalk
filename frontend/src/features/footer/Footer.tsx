@@ -24,10 +24,10 @@ export default function Footer(): JSX.Element {
       </div>
       <div className={style.references}>
         <div className={style.ref}>
-          <div><a className={style.a}>Услуги</a></div>
-          <div><a className={style.a}>Стоимость</a></div>
-          <div><a className={style.a}>Вопросы</a></div>
-          <div><a className={style.a}>Отзывы</a></div>
+          <div><a className={style.a} href="#services">Услуги</a></div>
+          <div><a className={style.a} href="#prices">Стоимость</a></div>
+          <div><a className={style.a} href="#questions">Вопросы</a></div>
+          <div><a className={style.a} href="#reviews">Отзывы</a></div>
         </div>
         <div className={style.userPolicy}><a className={style.a}>Пользовательское соглашение</a></div>
       </div>
