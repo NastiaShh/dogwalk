@@ -1,0 +1,68 @@
+.swiper-container {
+  width: 80%;
+  margin: auto;
+}
+
+.swiper {
+  width: 100%;
+  background: #f8efe8;
+  position: relative;
+  padding-top: 5.5em;
+}
+
+.swiper-slide {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2em;
+  left: 13em;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1em;
+}
+
+.swiper-button-next {
+  left: 17em;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1680px) {
+  .swiper-container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1150px) and (max-width: 1199px) {
+  .swiper-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: auto;
+    top: 3em;
+  }
+
+  .swiper-button-prev {
+    left: -2em;
+  }
+
+  .swiper-button-next {
+    left: 2em;
+  }
+}

@@ -27,7 +27,9 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.TEXT,
     },
-    status: DataTypes.TEXT
+    status: DataTypes.TEXT,
+    date: DataTypes.DATE,
+    time: DataTypes.TIME,
   }, {
     sequelize,
     modelName: 'ApplicationForm',
