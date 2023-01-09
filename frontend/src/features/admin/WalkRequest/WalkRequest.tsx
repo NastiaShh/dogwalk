@@ -13,8 +13,12 @@ function WalkRequest({ request }: RequestProps): JSX.Element {
   return (
     <div className={style.request_card}>
       <div className={style.request_body}><strong>Имя:</strong>{request.name}</div>
-      <div><strong>Дата:</strong> {request.date}</div>
-      <div><strong>Время:</strong> {request.time}</div>
+      {request.date && (
+        <>
+          <div><strong>Дата:</strong> {request.date}</div>
+          <div><strong>Время:</strong> {request.time}</div>
+        </>
+      )}
       <div><strong>Номер телефона:</strong>{request.phone}</div>
       <div><strong>Почта:</strong>{request.email}</div>
       <div>

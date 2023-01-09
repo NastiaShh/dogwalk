@@ -22,7 +22,7 @@ applicationFormsRouter
       name: req.body.name,
       phone: req.body.phone,
       email: req.body.email,
-      date: req.body.date.slice(0, 9),
+      date: req.body.date,
       time: req.body.time,
       status: 'обрабатывается',
     });
