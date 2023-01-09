@@ -25,7 +25,7 @@ export default function Footer(): JSX.Element {
       <div className={style.references}>
         <div className={style.ref}>
           <div><a className={style.a} href="#services">Услуги</a></div>
-          <div><a className={style.a} href="#prices">Стоимость</a></div>
+          <div><a className={style.a} href="#cost">Стоимость</a></div>
           <div><a className={style.a} href="#questions">Вопросы</a></div>
           <div><a className={style.a} href="#reviews">Отзывы</a></div>
         </div>
