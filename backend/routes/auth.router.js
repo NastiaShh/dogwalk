@@ -7,10 +7,7 @@ authRouter.get('/user', async (req, res) => {
   if (user) {
     res.json({
       isLoggedIn: true,
-      user: {
-        id: user.id,
-        name: user.name,
-      },
+      user,
     });
   } else {
     res.json({ isLoggedIn: false });
@@ -51,7 +48,7 @@ authRouter.post('/login', async (req, res) => {
     req.session.user = existingUser;
     res.json({ id: existingUser.id, name: existingUser.name });
   } else {
-    res.status(401).json({ error: 'Такого пользователя нет, либо пароли не совпадают' });
+    res.status(401).json({ error: 'Неверный email или пароль' });
   }
 });
 
