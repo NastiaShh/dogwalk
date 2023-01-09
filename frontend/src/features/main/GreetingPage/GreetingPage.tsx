@@ -1,6 +1,6 @@
 import style from './GreetingPage.module.css';
 import dog from './images/dog.png';
-import { TextField } from '@mui/material';
+import Navbar from './Navbar/Navbar';
 
 function GreetingPage(): JSX.Element {
   return (
@@ -12,12 +12,8 @@ function GreetingPage(): JSX.Element {
           <a href='#form' className={style.button}>попробовать</a>
         </form>
       </div>
-      <nav className={style.nav}>
-        <a href="#services" className={style.link}>Услуги</a>
-        <a href="#prices" className={style.link}>Стоимость</a>
-        <a href="#questions" className={style.link}>Вопросы</a>
-        <a href="#reviews" className={style.link}>Отзывы</a>
-      </nav>
+      <Navbar />
+      {/* поменять собаку */}
       <img src={dog} alt='dog' className={style.dog} />
     </section>
   );
