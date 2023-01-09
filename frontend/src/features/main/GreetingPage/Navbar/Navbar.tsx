@@ -11,7 +11,7 @@ function Navbar(): JSX.Element {
       ) : (
         <>
           <a href="#services" className={style.link}>Услуги</a>
-          <a href="#prices" className={style.link}>Стоимость</a>
+          <a href="#cost" className={style.link}>Стоимость</a>
           <a href="#questions" className={style.link}>Вопросы</a>
           <a href="#reviews" className={style.link}>Отзывы</a>
         </>

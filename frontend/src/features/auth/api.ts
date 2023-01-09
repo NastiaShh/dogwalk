@@ -1,7 +1,6 @@
-import Credentials from './types/Credentials';
-import User from './types/User';
+import { LoggedUser, User } from './types/UserState';
 
-export async function checkUser(): Promise<
+export async function getUser(): Promise<
   | {
       isLoggedIn: true;
       user: User;
@@ -13,10 +12,10 @@ export async function checkUser(): Promise<
   return (await fetch('/api/auth/user')).json();
 }
 
-export async function login(credentials: Credentials): Promise<User> {
+export async function login(user: LoggedUser): Promise<User> {
   const res = await fetch('/api/auth/login', {
     method: 'POST',
-    body: JSON.stringify(credentials),
+    body: JSON.stringify(user),
     headers: {
       'Content-Type': 'application/json',
     },
