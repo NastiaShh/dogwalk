@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
     },
     status: DataTypes.TEXT,
-    date: DataTypes.DATE,
+    date: DataTypes.DATEONLY,
     time: DataTypes.TIME,
   }, {
     sequelize,

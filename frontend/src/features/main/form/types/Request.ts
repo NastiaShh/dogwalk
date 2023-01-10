@@ -4,8 +4,8 @@ type Request = {
   phone: string;
   email: string;
   status: string;
-  date?: number;
-  time?: number;
+  date?: string;
+  time?: string;
 }
 
 export default Request

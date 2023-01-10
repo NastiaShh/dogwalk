@@ -1,38 +1,62 @@
 const { ApplicationForm } = require('../models');
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
+module.e+79999999999ports = {
   async up() {
     await ApplicationForm.bulkCreate([
       {
         name: 'Anya',
-        phone: 'x',
+        phone: '+79999999999',
         email: 'mail@mail.com',
-        status: 'обрабатывается',
+        status: 'не обработано',
       },
       {
         name: 'Kolya',
-        phone: 'x',
+        phone: '+79999999999',
         email: 'mail@mail.com',
-        status: 'обработано',
+        status: 'в работе',
       },
       {
         name: 'Tolya',
-        phone: 'x',
+        phone: '+79999999999',
         email: 'mail@mail.com',
-        status: 'обработано',
+        status: 'в работе',
       },
       {
         name: 'Fedya',
-        phone: 'x',
+        phone: '+79999999999',
         email: 'mail@mail.com',
-        status: 'обрабатывается',
+        status: 'не обработано',
+      },
+      {
+        name: 'Fedya',
+        phone: '+79999999999',
+        email: 'mail@mail.com',
+        status: 'не обработано',
+      },
+      {
+        name: 'Fedya',
+        phone: '+79999999999',
+        email: 'mail@mail.com',
+        status: 'не обработано',
       },
       {
         name: 'Kolya',
-        phone: 'x',
+        phone: '+79999999999',
         email: 'mail@mail.com',
-        status: 'обработано',
+        status: 'завершено',
+      },
+      {
+        name: 'Kostya',
+        phone: '+79999999999',
+        email: 'mail@mail.com',
+        status: 'завершено',
+      },
+      {
+        name: 'Anya',
+        phone: '+79999999999',
+        email: 'mail@mail.com',
+        status: 'завершено',
       },
     ]);
   },
