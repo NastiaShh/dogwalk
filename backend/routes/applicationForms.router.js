@@ -12,49 +12,55 @@ applicationFormsRouter
         ],
       })
 
-      res.json(data)
+      res.status(200).json(data)
     } catch (error) {
-      res.status(500).json({ error: 'чета упала с сервака' })
+      res.status(500).json({ error: 'внутренняя ошибка сервера' })
     }
   })
   .post('/', async (req, res) => {
-    const data = await ApplicationForm.create({
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-      date: req.body.date,
-      time: req.body.time,
-      status: 'обрабатывается',
-    });
-    res.json(data);
+    try {
+      const data = await ApplicationForm.create({
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        date: req.body.date,
+        time: req.body.time,
+        status: 'не обработано',
+      });
+      res.status(201).json(data);
+    } catch (error) {
+      res.status(500).json({ error: 'не удалось создать заявку, проверьте заполнены ли все поля корректно?' })
+    }
   })
   .put('/change/:id', async (req, res) => {
     let newStatus
     const { id } = req.params
     const { status } = req.body
-    if (status === 'обработано') {
-      newStatus = 'обрабатывается'
-    } else {
-      newStatus = 'обработано'
-    }
     try {
+      if (status === 'не обработано') {
+        newStatus = 'в работе'
+      } else if (status === 'в работе') {
+        newStatus = 'завершено'
+      } else {
+        newStatus = 'не обработано'
+      }
       const request = await ApplicationForm.findOne({ where: { id: Number(id) } })
       request.status = newStatus
       request.save()
-      res.json(request)
+      res.status(202).json(request)
     } catch (error) {
-      res.status(500).json({ error: 'чета упала с сервака' })
+      res.status(500).json({ error: 'внутренняя ошибка сервера' })
     }
   })
   .delete('/:id', async (req, res) => {
+    const { id } = req.params
     try {
-      const { id } = req.params
       const reqDestoy = await ApplicationForm.destroy({ where: { id } })
       if (reqDestoy) {
         res.status(202).json(id)
       }
     } catch (error) {
-      res.status(500).json({ error: 'чета упала с сервака' })
+      res.status(500).json({ error: 'внутренняя ошибка сервера' })
     }
   })
 
