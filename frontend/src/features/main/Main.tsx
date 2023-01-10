@@ -6,6 +6,7 @@ import ReviewsPage from './reviews/Page/ReviewsPage';
 import Footer from '../footer/Footer';
 import CostCalculationPage from './costCalculation/Page/CostCalculationPage';
 import ApplicationForm from './form/ApplicationForm/ApplicationForm';
+// import RegisterPage from '../auth/RegisterPage';
 // import LoginPage from '../auth/LoginPage';
 import { RootState, useAppDispatch } from '../../store';
 import { checkUser } from '../auth/authSlice';
