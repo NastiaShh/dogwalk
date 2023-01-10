@@ -1,4 +1,4 @@
-import { LoggedUser, User } from './types/UserState';
+import { RegisteredUser, LoggedUser, User } from './types/UserState';
 
 export async function getUser(): Promise<
   | {
@@ -10,6 +10,18 @@ export async function getUser(): Promise<
     }
 > {
   return (await fetch('/api/auth/user')).json();
+}
+
+export async function register(user: RegisteredUser): Promise<User> {
+  const res = await fetch('/api/auth/register', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  return res.json();
 }
 
 export async function login(user: LoggedUser): Promise<User> {
