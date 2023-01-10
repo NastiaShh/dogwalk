@@ -6,6 +6,11 @@ import { styled } from '@mui/system';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
+import { changeDogsNumber } from '../../priceSlice';
+import { changeTrialWalk } from '../../priceSlice';
+import { calculateTotalPrice } from '../../priceSlice';
+import { useAppDispatch } from '../../../../../../store';
+
 const MyToggleButton = styled(ToggleButton)(
   ({ theme }) => `
     border: 1px solid transparent;
@@ -56,14 +61,24 @@ const MyFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
 
 export default function DogsNumberToggle(): JSX.Element {
   const [dogsNumber, setDogsNumber] = React.useState(1);
+  const [checked, setChecked] = React.useState(false);
+  const dispatch = useAppDispatch();
 
-  const handleChange = (
+  const handleDogsNumberChange = (
     event: React.MouseEvent<HTMLElement>,
     newDogsNumber: number | null,
   ): void => {
     if (newDogsNumber !== null) {
       setDogsNumber(newDogsNumber);
+      dispatch(changeDogsNumber(newDogsNumber));
+      dispatch(calculateTotalPrice());
     }
+  };
+
+  const handleTrialWalkChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setChecked(event.target.checked);
+    dispatch(changeTrialWalk());
+    dispatch(calculateTotalPrice());
   };
  
   return (
@@ -85,8 +100,8 @@ export default function DogsNumberToggle(): JSX.Element {
                 padding: 0,
                 marginRight: '0.5em',
               }}
-              // checked={checked}
-              // onChange={handleChange}
+              checked={checked}
+              onChange={handleTrialWalkChange}
               // inputProps={{ 'aria-label': 'controlled' }}
             />
           }
@@ -99,7 +114,7 @@ export default function DogsNumberToggle(): JSX.Element {
       <MyToggleButtonGroup
         value={dogsNumber}
         exclusive
-        onChange={handleChange}
+        onChange={handleDogsNumberChange}
         aria-label="Platform"
       >
         <MyToggleButton value={1} disableRipple={true}>1</MyToggleButton>

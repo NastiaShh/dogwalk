@@ -4,9 +4,6 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import style from './WalkDurationToggle.module.css';
-import { useSelector } from 'react-redux';
-import { selectPrice } from '../../selectors';
-// import { changePrice } from '../../priceSlice';
 import { useAppDispatch } from '../../../../../../store';
 import { changeWalkPrice } from '../../priceSlice';
 import { calculateTotalPrice } from '../../priceSlice';
@@ -46,15 +43,8 @@ const MyToggleButtonGroup = styled(ToggleButtonGroup)(
 );
 
 export default function WalkDurationToggle(): JSX.Element {
-  const dispatch = useAppDispatch();
-
-  // if (typeof newValue === 'number') {
-  //   setValue(newValue);
-
-  //   dispatch(changePrice(calculatePrice(value)))
-  // }
-
   const [walkPrice, setWalkPrice] = React.useState('650');
+  const dispatch = useAppDispatch();
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,

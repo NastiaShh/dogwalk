@@ -14,18 +14,6 @@ const priceSlice = createSlice({
   name: 'price',
   initialState,
   reducers: {
-    increaseWalkPrice: (state) => {
-      state.oneWalkPrice *= 2
-    },
-    decreaseWalkPrice: (state) => {
-      state.oneWalkPrice /= 2
-    },
-    increaseWalksNumber: (state) => {
-      state.walksNumber += 1
-    },
-    decreaseWalksNumber: (state) => {
-      state.walksNumber -= 1
-    },
     changeWalkPrice: (state, action: PayloadAction<number>) => {
       state.oneWalkPrice = action.payload
     },
@@ -39,27 +27,18 @@ const priceSlice = createSlice({
       state.trialWalk = !state.trialWalk;
     },
     calculateTotalPrice: (state) => {
-      // console.log(state.totalPrice);
-      // state.totalPrice = action.payload;
       const pricePerWalk =
        (state.dogsNumber === 1) ?
           state.oneWalkPrice :
           state.oneWalkPrice + (state.dogsNumber - 1) * (state.oneWalkPrice * 0.3);
       const discount = (state.trialWalk) ? pricePerWalk : 0;
-      const totalPrice = pricePerWalk * state.walksNumber - discount;
+      const totalPrice = Math.round(pricePerWalk * state.walksNumber - discount);
       state.totalPrice = totalPrice;
     },
-    // changeOneWalkPrice: (state, action: PayloadAction<string>) => {
-    //   state.oneWalkPrice = Number(action.payload)
-    // },
   }
 })
 
 export const {
-  increaseWalkPrice,
-  decreaseWalkPrice,
-  increaseWalksNumber,
-  decreaseWalksNumber,
   changeWalkPrice,
   changeWalksNumber,
   changeDogsNumber,
