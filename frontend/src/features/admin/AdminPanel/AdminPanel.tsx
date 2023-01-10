@@ -18,30 +18,46 @@ function AdminPanel(): JSX.Element {
 
   return (
     <div className={style.requests}>
-        <div className={style.requests_block}>
-          <div className={style.request_head}>Необработанные заявки</div>
-          {requests.length !== 0 ? (
-            requests.map((request) => request.status === 'обрабатывается' && (
-              <WalkRequest
-                key={request.id}
-                request={request}
-              />
-            ))
-          )
-            : (<div>Записей нет</div>)}
-        </div>
-        <div className={style.requests_block}>
-          <div className={style.request_head}>Обработанные заявки</div>
-          {requests.length !== 0 ? (
-            requests.map((request) => request.status === 'обработано' && (
-              <WalkRequest
-                key={request.id}
-                request={request}
-              />
-            ))
-          )
-            : (<div>Записей нет</div>)}
-        </div>
+      <h3 className={style.request_head}>Заявки</h3>
+      <div className={style.requests_block}>
+        <div className={style.req_head}>Необработанные</div>
+        {requests.length !== 0 ? (
+          requests.map((request) => request.status === 'не обработано' && (
+            <WalkRequest
+              key={request.id}
+              request={request}
+            />
+          ))
+        )
+          : (<div>Записей нет</div>)}
+      </div>
+
+
+      <div className={style.requests_block}>
+        <div className={style.req_head}>В работе</div>
+        {requests.length !== 0 ? (
+          requests.map((request) => request.status === 'в работе' && (
+            <WalkRequest
+              key={request.id}
+              request={request}
+            />
+          ))
+        )
+          : (<div>Записей нет</div>)}
+      </div>
+
+      <div className={style.requests_block}>
+        <div className={style.req_head}>Завершенные</div>
+        {requests.length !== 0 ? (
+          requests.map((request) => request.status === 'завершено' && (
+            <WalkRequest
+              key={request.id}
+              request={request}
+            />
+          ))
+        )
+          : (<div>Записей нет</div>)}
+      </div>
     </div>
   )
 }

@@ -1,17 +1,27 @@
 .requests {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: #f8efe8;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .requests_block {
-  width: 45%;
+  width: 26%;
   padding: 10px;
+  background-color: #ffffff;
 }
 
 .request_head {
   font-size: 16pt;
-  font-weight: 600;
-  width: 100%;
+  /* font-weight: 600; */
+  width: 80%;
+}
+
+.req_head {
+  font-size: 16pt;
+  font-weight: 250;
 }

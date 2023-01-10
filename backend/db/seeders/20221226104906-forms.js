@@ -1,7 +1,7 @@
 const { ApplicationForm } = require('../models');
 
 /** @type {import('sequelize-cli').Migration} */
-module.e+79999999999ports = {
+module.exports = {
   async up() {
     await ApplicationForm.bulkCreate([
       {
