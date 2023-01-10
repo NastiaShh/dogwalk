@@ -5,8 +5,8 @@ import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import style from './WalkDurationToggle.module.css';
 import { useAppDispatch } from '../../../../../../store';
-import { changeWalkPrice } from '../../priceSlice';
-import { calculateTotalPrice } from '../../priceSlice';
+import { changeWalkPrice } from '../../../priceSlice';
+import { calculateTotalPrice } from '../../../priceSlice';
 
 const MyToggleButton = styled(ToggleButton)(
   ({ theme }) => `

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import { styled } from '@mui/system';
 import PetsIcon from '@mui/icons-material/Pets';
-import { changeWalksNumber } from '../../../priceSlice';
+import { changeDaysNumber } from '../../../priceSlice';
 import { calculateTotalPrice } from '../../../priceSlice';
 import { useAppDispatch } from '../../../../../../store';
 
@@ -107,7 +107,7 @@ export default function RangeSlider(): JSX.Element {
     if (typeof newValue === 'number') {
       setValue(newValue);
 
-      dispatch(changeWalksNumber(newValue));
+      dispatch(changeDaysNumber(newValue));
       dispatch(calculateTotalPrice());
     }
   };
@@ -119,7 +119,7 @@ export default function RangeSlider(): JSX.Element {
         fontSize: '1.2em',
         marginTop: '2.5em',
       }}>
-      Количество выгулов
+      Количество суток
     </div>
     
     <Box sx={{ 
