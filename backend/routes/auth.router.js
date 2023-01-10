@@ -4,8 +4,10 @@ const { User } = require('../db/models');
 
 authRouter.get('/user', async (req, res) => {
   const { user } = res.locals;
-  const role = await user.role
+
   if (user) {
+    const role = await user.role;
+
     res.json({
       isLoggedIn: true,
       user,
@@ -20,7 +22,6 @@ authRouter.post('/register', async (req, res) => {
   const { name, email, phone, password, passwordRepeat } = req.body;
 
   const existingUser = await User.findOne({ where: { email } });
-  // проверяем есть ли уже такой пользователь в БД
   if (existingUser) {
     res.status(401).json({ error: 'Такой пользователь уже есть' });
     return;
@@ -39,7 +40,6 @@ authRouter.post('/register', async (req, res) => {
     res.status(201).json({ user });
   } else {
     res.status(401).json({ error: 'Пароли не совпадают' });
-    // res.status(401).send({ error: 'Пароли не совпадают'});
   }
 });
 
@@ -47,12 +47,9 @@ authRouter.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const existingUser = await User.findOne({ where: { email } });
 
-  // проверяем, что такой пользователь есть в БД и пароли совпадают
   if (existingUser && (await bcrypt.compare(password, existingUser.password))) {
-    // кладём id нового пользователя в хранилище сессии (логиним пользователя)
     req.session.userId = existingUser.id;
     req.session.user = existingUser;
-    console.log(existingUser.role, 'sadfghjkgtresawrty');
     res.json({ id: existingUser.id, name: existingUser.name, role: existingUser.role });
   } else {
     res.status(401).json({ error: 'Неверный email или пароль' });
