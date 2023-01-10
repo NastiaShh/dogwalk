@@ -5,6 +5,12 @@ import { styled } from '@mui/system';
 import { sliderClasses } from '@mui/material/Slider';
 import PetsIcon from '@mui/icons-material/Pets';
 
+import { useSelector } from 'react-redux';
+import { selectPrice } from '../../selectors';
+import { changeWalksNumber } from '../../priceSlice';
+import { calculateTotalPrice } from '../../priceSlice';
+import { useAppDispatch } from '../../../../../../store';
+
 const marks = [
   {
     value: 1,
@@ -98,6 +104,27 @@ function valuetext(value: number): string {
 }
 
 export default function RangeSlider(): JSX.Element {
+  const price = useSelector(selectPrice);
+  const dispatch = useAppDispatch();
+
+  const [value, setValue] = React.useState<number>(1); 
+
+  // function calculatePrice(value: number): number {
+  //   console.log(value);
+  //   console.log(price.totalPrice);
+  //   console.log(price.totalPrice * value)
+  //   return price.walkPrice * value;
+  // }
+
+  const handleCountSliderChange = (event: Event, newValue: number | number[]): void => {
+    if (typeof newValue === 'number') {
+      setValue(newValue);
+
+      dispatch(changeWalksNumber(value));
+      dispatch(calculateTotalPrice());
+    }
+  };
+
   return (
     <>
     <div style={{
@@ -114,13 +141,14 @@ export default function RangeSlider(): JSX.Element {
       <MySlider
         slots={{ thumb: MyThumbComponent }}
         aria-label="Always visible"
-        defaultValue={0}
+        defaultValue={1}
         getAriaValueText={valuetext}
         step={1}
         marks={marks}
         valueLabelDisplay="auto"
         min={1}
         max={30}
+        onChange={handleCountSliderChange}
       />
     </Box>
     </>

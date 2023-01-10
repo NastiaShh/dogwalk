@@ -1,7 +1,10 @@
 import style from '../../../Page/CostCalculationPage.module.css';
-
+import { useSelector } from 'react-redux';
+import { selectPrice } from '../../selectors';
 
 export default function CalculatedPrice(): JSX.Element {
+  const price = useSelector(selectPrice);
+
   return (
     <div style={{
       marginTop: '2.3em',
@@ -16,7 +19,7 @@ export default function CalculatedPrice(): JSX.Element {
         fontSize: '1.4em',
         marginLeft: '1em',
       }}>
-        от 650 руб
+        от {price.totalPrice} руб
       </span>
       <a href='#form' type="submit"
         className={style.button}
