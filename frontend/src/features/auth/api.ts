@@ -14,7 +14,7 @@ export async function getUser(): Promise<
 }
 
 export async function register(user: RegisteredUser): Promise<User> {
-  const res = await fetch('/api/auth/register', {
+  const response = await fetch('/api/auth/register', {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
@@ -22,11 +22,16 @@ export async function register(user: RegisteredUser): Promise<User> {
     },
   });
 
-  return res.json();
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
 }
 
 export async function login(user: LoggedUser): Promise<User> {
-  const res = await fetch('/api/auth/login', {
+  const response = await fetch('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
@@ -34,7 +39,12 @@ export async function login(user: LoggedUser): Promise<User> {
     },
   });
 
-  return res.json();
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
 }
 
 export async function logout(): Promise<void> {

@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import AuthState from './types/AuthState';
 import { RegisteredUser, LoggedUser } from './types/UserState';
-// import User from './types/User';
 import * as api from './api';
-// import { getUser } from './authSlice';
 
 export const register = createAsyncThunk('api/auth/register', async (user: RegisteredUser) => api.register(user));
 
@@ -21,25 +19,16 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {},
-  // здесь описываем реакции на асинхронные операции (санки)
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
-        // if (action.payload) {
-        //   console.log('kfkfkfk');
-        // } 
-        // if (action.payload) {
-          // console.log(action.payload);
-          
-          const user = action.payload;
-          state.user = user;
-          state.authChecked = true;
-        // }
+        const user = action.payload;
+        state.user = user;
+        state.authChecked = true;
       })
       .addCase(register.rejected, (state, action) => {
-        // state = initialState;
+        state = initialState;
         console.log(action.error.message);
-        // console.log(state);
       })
       .addCase(login.fulfilled, (state, action) => {
         if (action.payload) {
@@ -54,9 +43,9 @@ const authSlice = createSlice({
         // в action.error попадёт ошибка сгенерированная санком
         // state.loadError = action.error.message;
         // state.loading = false;
+        console.log(action.error.message);
       })
       .addCase(checkUser.fulfilled, (state, action) => {
-        // state.authChecked = true;
         if (!action.payload.isLoggedIn) {
           state = initialState;
         } else {
@@ -64,10 +53,8 @@ const authSlice = createSlice({
           state.role = action.payload.role
           state.authChecked = action.payload.isLoggedIn;
         }
-        
-        console.log(action.payload.isLoggedIn);
-        console.log(state.authChecked);
-        
+        // console.log(action.payload.isLoggedIn);
+        // console.log(state.authChecked);
       })
   },
 });
