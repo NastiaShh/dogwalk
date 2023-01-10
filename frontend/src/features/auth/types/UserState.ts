@@ -1,3 +1,11 @@
+export type RegisteredUser = {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  passwordRepeat: string;
+};
+
 export type LoggedUser = {
   email: string;
   password: string;
@@ -5,9 +13,10 @@ export type LoggedUser = {
 
 export type User = {
   id: number;
-  email: string;
   role: string;
   name: string;
+  email: string;
+  phone: string;
   password: string;
   photo?: string;
 };

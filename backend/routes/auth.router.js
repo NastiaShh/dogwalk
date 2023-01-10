@@ -17,26 +17,30 @@ authRouter.get('/user', async (req, res) => {
 });
 
 authRouter.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, phone, password, passwordRepeat } = req.body;
 
   const existingUser = await User.findOne({ where: { email } });
   // проверяем есть ли уже такой пользователь в БД
   if (existingUser) {
-    res.status(422).json({ error: 'Такой пользователь уже есть' });
+    res.status(401).json({ error: 'Такой пользователь уже есть' });
     return;
   }
 
-  // создаём нового пользователя
-  const user = await User.create({
-    name,
-    email,
-    // хэшируем пароль, чтобы не хранить в открытом виде в БД
-    password: await bcrypt.hash(password, 10),
-  });
+  if (password === passwordRepeat) {
+    const user = await User.create({
+      name,
+      email,
+      phone,
+      password: await bcrypt.hash(password, 10),
+      role: 'user',
+    })
 
-  // кладём id нового пользователя в хранилище сессии (сразу логиним пользователя)
-  req.session.userId = user.id;
-  res.json({ id: user.id, name: user.name });
+    req.session.userId = user.id;
+    res.status(201).json({ user });
+  } else {
+    res.status(401).json({ error: 'Пароли не совпадают' });
+    // res.status(401).send({ error: 'Пароли не совпадают'});
+  }
 });
 
 authRouter.post('/login', async (req, res) => {

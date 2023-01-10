@@ -1,4 +1,4 @@
-import { LoggedUser, User, UserRole } from './types/UserState';
+import { RegisteredUser, LoggedUser, User, UserRole } from './types/UserState';
 
 export async function getUser(): Promise<
   | {
@@ -13,8 +13,8 @@ export async function getUser(): Promise<
   return (await fetch('/api/auth/user')).json();
 }
 
-export async function login(user: LoggedUser): Promise<User> {
-  const res = await fetch('/api/auth/login', {
+export async function register(user: RegisteredUser): Promise<User> {
+  const response = await fetch('/api/auth/register', {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
@@ -22,7 +22,29 @@ export async function login(user: LoggedUser): Promise<User> {
     },
   });
 
-  return res.json();
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
+}
+
+export async function login(user: LoggedUser): Promise<User> {
+  const response = await fetch('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
 }
 
 export async function logout(): Promise<void> {

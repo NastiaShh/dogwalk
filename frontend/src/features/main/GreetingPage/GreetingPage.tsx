@@ -13,7 +13,6 @@ function GreetingPage(): JSX.Element {
         </form>
       </div>
       <Navbar />
-      {/* поменять собаку */}
       <img src={dog} alt='dog' className={style.dog} />
     </section>
   );
