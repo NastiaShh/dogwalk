@@ -1,9 +1,10 @@
-import { RegisteredUser, LoggedUser, User } from './types/UserState';
+import { RegisteredUser, LoggedUser, User, UserRole } from './types/UserState';
 
 export async function getUser(): Promise<
   | {
       isLoggedIn: true;
       user: User;
+      role: UserRole
     }
   | {
       isLoggedIn: false;

@@ -22,3 +22,5 @@ export type User = {
 };
 
 export type UserId = User['id'];
+export type UserRole = User['role'];
+

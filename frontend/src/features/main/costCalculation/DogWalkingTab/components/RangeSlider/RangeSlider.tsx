@@ -2,8 +2,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import { styled } from '@mui/system';
-import { sliderClasses } from '@mui/material/Slider';
 import PetsIcon from '@mui/icons-material/Pets';
+import { changeWalksNumber } from '../../priceSlice';
+import { calculateTotalPrice } from '../../priceSlice';
+import { useAppDispatch } from '../../../../../../store';
 
 const marks = [
   {
@@ -98,6 +100,18 @@ function valuetext(value: number): string {
 }
 
 export default function RangeSlider(): JSX.Element {
+  const [value, setValue] = React.useState<number>(1);
+  const dispatch = useAppDispatch();
+
+  const handleCountSliderChange = (event: Event, newValue: number | number[]): void => {
+    if (typeof newValue === 'number') {
+      setValue(newValue);
+
+      dispatch(changeWalksNumber(newValue));
+      dispatch(calculateTotalPrice());
+    }
+  };
+
   return (
     <>
     <div style={{
@@ -114,13 +128,14 @@ export default function RangeSlider(): JSX.Element {
       <MySlider
         slots={{ thumb: MyThumbComponent }}
         aria-label="Always visible"
-        defaultValue={0}
+        defaultValue={value}
         getAriaValueText={valuetext}
         step={1}
         marks={marks}
         valueLabelDisplay="auto"
         min={1}
         max={30}
+        onChange={handleCountSliderChange}
       />
     </Box>
     </>

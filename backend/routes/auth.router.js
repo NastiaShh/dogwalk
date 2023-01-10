@@ -4,10 +4,12 @@ const { User } = require('../db/models');
 
 authRouter.get('/user', async (req, res) => {
   const { user } = res.locals;
+  const role = await user.role
   if (user) {
     res.json({
       isLoggedIn: true,
       user,
+      role
     });
   } else {
     res.json({ isLoggedIn: false });
@@ -50,7 +52,8 @@ authRouter.post('/login', async (req, res) => {
     // кладём id нового пользователя в хранилище сессии (логиним пользователя)
     req.session.userId = existingUser.id;
     req.session.user = existingUser;
-    res.json({ id: existingUser.id, name: existingUser.name });
+    console.log(existingUser.role, 'sadfghjkgtresawrty');
+    res.json({ id: existingUser.id, name: existingUser.name, role: existingUser.role });
   } else {
     res.status(401).json({ error: 'Неверный email или пароль' });
   }

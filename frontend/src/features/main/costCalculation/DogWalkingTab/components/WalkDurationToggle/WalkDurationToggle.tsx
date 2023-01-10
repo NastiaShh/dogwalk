@@ -4,6 +4,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import style from './WalkDurationToggle.module.css';
+import { useAppDispatch } from '../../../../../../store';
+import { changeWalkPrice } from '../../priceSlice';
+import { calculateTotalPrice } from '../../priceSlice';
 
 const MyToggleButton = styled(ToggleButton)(
   ({ theme }) => `
@@ -40,14 +43,17 @@ const MyToggleButtonGroup = styled(ToggleButtonGroup)(
 );
 
 export default function WalkDurationToggle(): JSX.Element {
-  const [walkDuration, setWalkDuration] = React.useState('1 h');
+  const [walkPrice, setWalkPrice] = React.useState('650');
+  const dispatch = useAppDispatch();
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
-    newWalkDuration: string | null,
+    newWalkPrice: string | null,
   ): void => {
-    if (newWalkDuration !== null) {
-      setWalkDuration(newWalkDuration);
+    if (newWalkPrice !== null) {
+      setWalkPrice(newWalkPrice);
+      dispatch(changeWalkPrice(Number(newWalkPrice)));
+      dispatch(calculateTotalPrice());
     }
   };
  
@@ -55,13 +61,13 @@ export default function WalkDurationToggle(): JSX.Element {
     <div className={style.container}>
       <MyToggleButtonGroup
         color="primary"
-        value={walkDuration}
+        value={walkPrice}
         exclusive
         onChange={handleChange}
         aria-label="Platform"
       >
-        <MyToggleButton value="1 h" disableRipple={true} disableFocusRipple={true}>Длительность прогулки - 1 час</MyToggleButton>
-        <MyToggleButton value="30 min" disableRipple={true}>Длительность прогулки - 30 мин</MyToggleButton>
+        <MyToggleButton value='650' disableRipple={true} disableFocusRipple={true}>Длительность прогулки - 1 час</MyToggleButton>
+        <MyToggleButton value='325' disableRipple={true}>Длительность прогулки - 30 мин</MyToggleButton>
       </MyToggleButtonGroup>
     </div>
   )
