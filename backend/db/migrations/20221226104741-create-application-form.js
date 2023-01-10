@@ -26,7 +26,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       time: {
         type: Sequelize.TIME
