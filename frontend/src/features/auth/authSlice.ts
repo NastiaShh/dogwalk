@@ -28,8 +28,10 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         if (action.payload) {
           const user = action.payload;
+          const role = action.payload.role;
           state.user = user;
           state.authChecked = true;
+          state.role = role;
         }
       })
       .addCase(login.rejected, (state, action) => {
@@ -43,6 +45,7 @@ const authSlice = createSlice({
           state = initialState;
         } else {
           state.user = action.payload.user;
+          state.role = action.payload.role
           state.authChecked = action.payload.isLoggedIn;
         }
       })
