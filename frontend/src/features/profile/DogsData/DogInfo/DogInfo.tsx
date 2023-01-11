@@ -1,29 +1,35 @@
-import { useForm } from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
 
 
-function DogInfo(): JSX.Element {
-  const { register } = useForm<Dog>();
-
+function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
   return (
-    <form >
+    <div>
+      <p>Имя собаки</p>
       <input
         type="text"
         {...register("name")}
       />
+      <p>Порода</p>
       <input
         type="text"
         {...register('breed')}
       />
+      <p>Возраст</p>
       <input
-        type="text"
+        type="number"
         {...register('age')}
       />
-      <input
-        type="text"
-        {...register('size')}
-      />
-    </form>
+      <p>Размер</p>
+      <select {...register('size')}>
+        <option value="маленькая">Маленькая</option>
+        <option value="средняя">Средняя</option>
+        <option value="большая">Большая</option>
+      </select>
+      <button type="button">
+        далее
+      </button>
+    </div>
   )
 }
 
