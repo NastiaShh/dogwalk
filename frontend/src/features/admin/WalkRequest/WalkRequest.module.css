@@ -1,83 +1,73 @@
-.request_body {
+.card {
+  text-align: left;
+  font-size: 0.70em;
+  width: 18em;
+  margin-bottom: 2em;
+  padding: 1.6em 1.5em;
+  border: 2px solid #ff9a16;
+  border-radius: 17px;
+}
+
+.cardUnfinished {
+  border: 2px solid #ff9a16;
+}
+
+.cardInWork {
+  border: 2px solid #000;
+}
+
+.cardFinished {
+  border: 2px solid transparent;
+  background-color: #f4f4f4;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  padding-bottom: 2em;
+}
+
+.label {
+  color: #5a5a5a;
+  width: 45%;
+}
+
+.buttons {
+  display: flex;
+  margin: auto;
   width: 100%;
+  justify-content: center;
 }
 
-.request_card:nth-child(2n + 1) {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-  padding: 4px; 
+.btnChange,
+.btnDelete {
+  border: none;
+  border-radius: 17px;
+  font-size: 1em;
+  padding: 0.6em 1.3em;
+  background-color: #ff9a16;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.request_card {
-  padding: 4px;
-  border-radius: 10px;
+.btnChange {
+  margin-right: 0.7em;
 }
 
-div > select {
-  width: 100px;
+.btnChange:hover {
+  opacity: 0.7;
 }
 
-.request_card:hover {
-  -webkit-box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+.btnDelete {
+  background-color: #c1c1c1;
 }
 
-select {
-  padding: 0;
-}
-
-.btn_change {
-  height: 55px;
-  border-radius: 45px;
-  font-size: 15px;
-  color: #ffffff;
-  background: #ed810d;
-  transition: .3s;
-  margin-right: 20px;
-  margin-top: 30px;
-}
-
-.btn_delete {
-  height: 55px;
-  border-radius: 45px;
-  font-size: 15px;
-  color: #ffffff;
-  background: #a42e34;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, .1);
-  transition: .3s;
-  margin-right: 20px;
-  margin-top: 30px;
-}
-
-.btn_change:hover {
-  align-items: center;
-  color: white;
-  font-size: 15px;
-  transform: translateY(-1px);
-}
-
-.btn_delete:hover {
-  align-items: center;
-  background: #d22831;
-  box-shadow: 0 5px 13px #d22831;
-  color: white;
-  font-size: 15px;
-  transform: translateY(-1px);
-}
-.select__req{
-  width: 15%;
-  border: 0;
-  outline: 0;
-  font-size: 1.1rem;
-  color: #ffffff;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
- background-color: #4d7b50;
- border-radius: 2px;
-}
-.option__req{
-  color: #ffffff;
+.btnDelete:hover {
+  filter: brightness(0.9);
 }

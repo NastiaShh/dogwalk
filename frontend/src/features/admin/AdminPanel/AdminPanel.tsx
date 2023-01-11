@@ -1,14 +1,12 @@
+import style from './AdminPanel.module.css'
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "../../../store"
 import { loadRequest } from "../../main/form/requestsSlice"
 import { selectRequests } from "../../main/form/selectors"
 import WalkRequest from "../WalkRequest/WalkRequest"
-import style from './AdminPanel.module.css';
 
-
-
-function AdminPanel(): JSX.Element {
+export default function AdminPanel(): JSX.Element {
   const requests = useSelector(selectRequests)
   const dispatch = useAppDispatch()
 
@@ -17,35 +15,48 @@ function AdminPanel(): JSX.Element {
   }, [dispatch])
 
   return (
-    <div className={style.requests}>
-        <div className={style.requests_block}>
-          <div className={style.request_head}>Необработанные заявки</div>
-          {requests.length !== 0 ? (
-            requests.map((request) => request.status === 'обрабатывается' && (
-              <WalkRequest
-                key={request.id}
-                request={request}
-              />
-            ))
-          )
-            : (<div>Записей нет</div>)}
+    <div className={style.page}>
+      <div className={style.container}>
+        <h3 className={style.title}>Заявки</h3>
+        <div className={style.content}>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>Необработанные</h4>
+              {requests.length !== 0 ? (
+                  requests.map((request) => request.status === 'не обработано' && (
+                    <WalkRequest
+                      key={request.id}
+                      request={request}
+                    />
+                  ))
+                )
+                  : (<div>Записей нет</div>)}
+          </section>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>В работе</h4>
+            {requests.length !== 0 ? (
+              requests.map((request) => request.status === 'в работе' && (
+                <WalkRequest
+                  key={request.id}
+                  request={request}
+                />
+              ))
+            )
+              : (<div>Записей нет</div>)}
+          </section>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>Завершенные</h4>
+            {requests.length !== 0 ? (
+              requests.map((request) => request.status === 'завершено' && (
+                <WalkRequest
+                  key={request.id}
+                  request={request}
+                />
+              ))
+            )
+              : (<div>Записей нет</div>)}
+          </section>
         </div>
-        <div className={style.requests_block}>
-          <div className={style.request_head}>Обработанные заявки</div>
-          {requests.length !== 0 ? (
-            requests.map((request) => request.status === 'обработано' && (
-              <WalkRequest
-                key={request.id}
-                request={request}
-              />
-            ))
-          )
-            : (<div>Записей нет</div>)}
-        </div>
+      </div>
     </div>
-  )
-}
-
-export default AdminPanel
-
-
+  );
+};

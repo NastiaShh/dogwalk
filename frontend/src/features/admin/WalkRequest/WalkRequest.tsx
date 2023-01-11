@@ -6,30 +6,42 @@ import style from './WalkRequest.module.css';
 
 type RequestProps = {
   request: Request
-}
+};
 
 function WalkRequest({ request }: RequestProps): JSX.Element {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
+
   return (
-    <div className={style.request_card}>
-      <div className={style.request_body}><strong>Имя:</strong>{request.name}</div>
-      {request.date && (
-        <>
-          <div><strong>Дата:</strong> {request.date}</div>
-          <div><strong>Время:</strong> {request.time}</div>
-        </>
-      )}
-      <div><strong>Номер телефона:</strong>{request.phone}</div>
-      <div><strong>Почта:</strong>{request.email}</div>
-      <div>
-        <button type="button" className={style.btn_change} onClick={() => dispatch(changeRequest(request))}>Изменить статус</button>
-        <button type="button"
-          className={style.btn_delete} onClick={() => dispatch(deleteRequest(request))}>Удалить заявку</button>
+      <div className={`${style.card} ${(request.status === 'не обработано') ? style.cardUnfinished : (request.status === 'в работе') ? style.cardInWork : style.cardFinished}`}>
+        <div className={style.cardBody}>
+          <div className={style.row}>
+            <div className={style.label}>Имя</div>
+            <div className={style.infoText}>{request.name}</div>
+          </div>
+          {request.date && (
+            <div className={style.row}>
+              <div className={style.label}>Дата</div>
+              <div className={style.infoText}>{request.time}</div>
+            </div>
+          )}
+          <div className={style.row}>
+            <div className={style.label}>Номер телефона</div>
+            <div className={style.infoText}>{request.phone}</div>
+          </div>
+          <div className={style.row}>
+            <div className={style.label}>Почта</div>
+            <div className={style.infoText}>{request.email}</div>
+          </div>
+        </div>
+        <div className={style.buttons}>
+          {request.status !== 'завершено' && (
+            <button className={style.btnChange} onClick={() => dispatch(changeRequest(request))}>изменить</button>
+          )}
+          <button className={style.btnDelete} onClick={() => dispatch(deleteRequest(request))}>удалить</button>
+          
+        </div>
       </div>
-    </div>
   )
 }
 
 export default WalkRequest
-
-

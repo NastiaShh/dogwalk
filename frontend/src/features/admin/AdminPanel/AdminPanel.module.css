@@ -1,17 +1,30 @@
-.requests {
+.page {
+  background-color: #f8efe8;
+  padding-top: 8vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 8vh;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 19px;
+  padding: 2em 3em;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 0.7em;
+}
+
+.content {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 6em;
+  margin-right: 6em;
 }
 
-.requests_block {
-  width: 45%;
-  padding: 10px;
-}
-
-.request_head {
-  font-size: 16pt;
-  font-weight: 600;
-  width: 100%;
+.sectionTitle {
+  margin-bottom: 1.8em;
+  font-size: 0.8em;
 }
