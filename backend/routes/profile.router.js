@@ -6,7 +6,7 @@ profileRouter
     const { user } = res.locals
     try {
       if (user) {
-        const dog = await Dog.findOne({ where: { user_id: user.id } })
+        const dog = await Dog.findAll({ where: { user_id: user.id } })
         res.status(200).json(dog)
       }
     } catch (error) {
@@ -14,8 +14,10 @@ profileRouter
     }
   })
   .post('/', async (req, res) => {
+    const { user } = res.locals
     try {
       const data = await Dog.create({
+        user_id: user.id,
         name: req.body.name,
         breed: req.body.breed,
         age: req.body.age,
@@ -31,6 +33,7 @@ profileRouter
       });
       res.status(201).json(data);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ error: 'не удалось создать заявку, проверьте заполнены ли все поля корректно?' })
     }
   });
