@@ -86,7 +86,7 @@ select {
   text-align: left;
   font-size: 0.70em;
   width: 18em;
-  margin: 2em;
+  /* margin: 2em; */
   padding: 1.6em 1.5em;
   border: 2px solid #ff9a16;
   border-radius: 17px;

@@ -4,12 +4,11 @@ import Request from "../../main/form/types/Request";
 import style from './WalkRequest.module.css';
 
 
-// type RequestProps = {
-//   request: Request
-// }
-// { request }: RequestProps
+type RequestProps = {
+  request: Request
+};
 
-function WalkRequest(): JSX.Element {
+function WalkRequest({ request }: RequestProps): JSX.Element {
   const dispatch = useAppDispatch();
 
   return (
@@ -17,19 +16,21 @@ function WalkRequest(): JSX.Element {
         <div className={style.cardBody}>
           <div className={style.row}>
             <div className={style.label}>Имя</div>
-            <div className={style.infoText}>Ульяна</div>
+            <div className={style.infoText}>{request.name}</div>
           </div>
-          <div className={style.row}>
-          <div className={style.label}>Дата</div>
-            <div className={style.infoText}>09/01/2022 15:12</div>
-          </div>
+          {request.date && (
+            <div className={style.row}>
+              <div className={style.label}>Дата</div>
+              <div className={style.infoText}>{request.time}</div>
+            </div>
+          )}
           <div className={style.row}>
             <div className={style.label}>Номер телефона</div>
-            <div className={style.infoText}>+799999999</div>
+            <div className={style.infoText}>{request.phone}</div>
           </div>
           <div className={style.row}>
             <div className={style.label}>Почта</div>
-            <div className={style.infoText}>pochta@mail.ru</div>
+            <div className={style.infoText}>{request.email}</div>
           </div>
         </div>
         <div className={style.buttons}>

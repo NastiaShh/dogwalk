@@ -11,6 +11,8 @@ import ApplicationForm from './form/ApplicationForm/ApplicationForm';
 import { RootState, useAppDispatch } from '../../store';
 import { checkUser } from '../auth/authSlice';
 // import { useSelector } from 'react-redux';
+// import AdminPanel from '../admin/AdminPanel/AdminPanel';
+import AdminPanel from '../admin/AdminPanel/AdminPanel'
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -25,6 +27,7 @@ function Main(): JSX.Element {
 
   return (
     <div>
+      <AdminPanel />
       <GreetingPage />
       <AboutPage />
       <CostCalculationPage />
