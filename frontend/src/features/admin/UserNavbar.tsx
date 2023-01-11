@@ -1,10 +1,10 @@
-import style from '../GreetingPage.module.css';
+import style from './UserNavbar.module.css';
 import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../../../store';
-import { logout } from '../../../auth/authSlice';
+import { RootState, useAppDispatch } from '../../store';
 import { NavLink } from 'react-router-dom';
+import { logout } from '../auth/authSlice';
 
-function Navbar(): JSX.Element {
+function UserNavbar(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const { authChecked, role } = useSelector((state: RootState) => state.auth);
@@ -16,6 +16,7 @@ function Navbar(): JSX.Element {
 
   return (
     <nav className={style.nav}>
+      <NavLink className={style.link} to='/'>На главную</NavLink>
       {authChecked === true && role === 'admin' && (
         <NavLink className={style.link} to='/admin'>Заявки</NavLink>
       )}
@@ -25,16 +26,8 @@ function Navbar(): JSX.Element {
       {authChecked === true && (
         <NavLink className={style.link} to='/api/auth/logout' onClick={handleLogout}>Выйти</NavLink>
       )}
-      {authChecked === false && (
-        <>
-          <a href="#services" className={style.link}>Услуги</a>
-          <a href="#cost" className={style.link}>Стоимость</a>
-          <a href="#questions" className={style.link}>Вопросы</a>
-          <a href="#reviews" className={style.link}>Отзывы</a>
-        </>
-      )}
     </nav>
   );
 }
 
-export default Navbar;
+export default UserNavbar;

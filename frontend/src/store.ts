@@ -6,6 +6,7 @@ import requestsSlice from './features/main/form/requestsSlice';
 import walkersSlice from './features/walkers/walkersSlice';
 import authSlice from './features/auth/authSlice';
 import priceSlice from './features/main/costCalculation/priceSlice';
+import dogsSlice from './features/profile/dogsSlice';
 
 const store = configureStore({
   // теперь функция combineReducers не нужна
@@ -15,6 +16,7 @@ const store = configureStore({
     requests: requestsSlice,
     auth: authSlice,
     price: priceSlice,
+    dogs: dogsSlice,
   }
 })
 

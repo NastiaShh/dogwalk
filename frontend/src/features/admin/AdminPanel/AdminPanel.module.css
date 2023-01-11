@@ -1,27 +1,28 @@
-.requests {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.page {
   background-color: #f8efe8;
-  padding-top: 10vh;
-  padding-bottom: 20vh;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-top: 8vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 8vh;
 }
 
-.requests_block {
-  width: 26%;
-  padding: 10px;
-  background-color: #ffffff;
+.container {
+  background-color: #fff;
+  border-radius: 19px;
+  padding: 2em 3em;
 }
 
-.request_head {
-  font-size: 16pt;
-  /* font-weight: 600; */
-  width: 80%;
+.title {
+  margin: 0;
+  margin-bottom: 0.7em;
 }
 
-.req_head {
-  font-size: 16pt;
-  font-weight: 250;
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  margin-bottom: 1.8em;
+  font-size: 0.8em;
 }

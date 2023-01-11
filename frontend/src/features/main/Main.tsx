@@ -11,14 +11,16 @@ import ApplicationForm from './form/ApplicationForm/ApplicationForm';
 import { RootState, useAppDispatch } from '../../store';
 import { checkUser } from '../auth/authSlice';
 // import { useSelector } from 'react-redux';
+// import AdminPanel from '../admin/AdminPanel/AdminPanel';
+import AdminPanel from '../admin/AdminPanel/AdminPanel'
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
-  
+
   useEffect(() => {
     dispatch(checkUser());
   }, [dispatch]);
-  
+
   // для проверки пользователя из рут-стейта
   // const { authChecked, user } = useSelector((state: RootState) => state.auth);
   // console.log(authChecked, user);

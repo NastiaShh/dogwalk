@@ -19,7 +19,7 @@ export default function Footer(): JSX.Element {
           dogwalk@cool.ru
         </div>
         <div className={style.copyright}>
-          © 2018-2022 Dogwalk
+          © 2018-2023 Dogwalk
         </div>
       </div>
       <div className={style.references}>
