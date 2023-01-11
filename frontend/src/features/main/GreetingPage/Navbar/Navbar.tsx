@@ -2,6 +2,7 @@ import style from '../GreetingPage.module.css';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../../../store';
 import { logout } from '../../../auth/authSlice';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -16,13 +17,13 @@ function Navbar(): JSX.Element {
   return (
     <nav className={style.nav}>
       {authChecked === true && role === 'admin' && (
-        <a href="/" className={style.link}>Заявки</a>
+        <NavLink className={style.link} to='/admin'>Заявки</NavLink>
       )}
       {authChecked === true && role === 'user' && (
-        <a href="/" className={style.link}>Личный кабинет</a>
+        <NavLink className={style.link} to='/profile'>Личный кабинет</NavLink>
       )}
       {authChecked === true && (
-        <a href="/api/auth/logout" className={style.link} onClick={handleLogout}>Выйти</a>
+        <NavLink className={style.link} to='/api/auth/logout' onClick={handleLogout}>Выйти</NavLink>
       )}
       {authChecked === false && (
         <>
