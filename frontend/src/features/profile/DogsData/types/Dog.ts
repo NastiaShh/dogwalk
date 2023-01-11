@@ -1,4 +1,4 @@
-type Request = {
+type Dog = {
   id: number;
   name: string,
   breed: string,
@@ -14,4 +14,4 @@ type Request = {
   description: string
 }
 
-export default Request
+export default Dog

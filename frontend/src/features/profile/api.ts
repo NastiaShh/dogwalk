@@ -1,24 +1,25 @@
-// export async function loadUser(): Promise<User> {
-//   const response = await fetch('/api/profile')
+import Dog from "./DogsData/types/Dog";
 
-//   const result = await response.json()
+export async function loadDogs(): Promise<Dog[]> {
+  const response = await fetch('/api/profile')
+  const result = await response.json()
 
-//   return result
-// }
+  return result
+}
 
-// export async function changeRequest(request: Request): Promise<Request> {
-//   const res = await fetch(`/api/forms/change/${request.id}`, {
-//     method: 'PUT',
-//     body: JSON.stringify(request),
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
+export async function createDog(dog: Dog): Promise<Dog> {
+  const res = await fetch('/api/profile', {
+    method: 'POST',
+    body: JSON.stringify(dog),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-//   if (res.status >= 400) {
-//     const { error } = await res.json();
-//     throw error;
-//   }
+  if (res.status >= 400) {
+    const { error } = await res.json();
+    throw error;
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
