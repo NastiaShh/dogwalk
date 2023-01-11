@@ -15,16 +15,48 @@ export default function AdminPanel(): JSX.Element {
   }, [dispatch])
 
   return (
-    <div>
-      {requests.length !== 0 ? (
-          requests.map((request) => request.status === 'не обработано' && (
-            <WalkRequest
-              key={request.id}
-              request={request}
-            />
-          ))
-        )
-          : (<div>Записей нет</div>)}
+    <div className={style.page}>
+      <div className={style.container}>
+        <h3 className={style.title}>Заявки</h3>
+        <div className={style.content}>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>Необработанные</h4>
+              {requests.length !== 0 ? (
+                  requests.map((request) => request.status === 'не обработано' && (
+                    <WalkRequest
+                      key={request.id}
+                      request={request}
+                    />
+                  ))
+                )
+                  : (<div>Записей нет</div>)}
+          </section>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>В работе</h4>
+            {requests.length !== 0 ? (
+              requests.map((request) => request.status === 'в работе' && (
+                <WalkRequest
+                  key={request.id}
+                  request={request}
+                />
+              ))
+            )
+              : (<div>Записей нет</div>)}
+          </section>
+          <section className={style.section}>
+            <h4 className={style.sectionTitle}>Завершенные</h4>
+            {requests.length !== 0 ? (
+              requests.map((request) => request.status === 'завершено' && (
+                <WalkRequest
+                  key={request.id}
+                  request={request}
+                />
+              ))
+            )
+              : (<div>Записей нет</div>)}
+          </section>
+        </div>
+      </div>
     </div>
   );
 };

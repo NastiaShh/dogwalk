@@ -12,7 +12,7 @@ function WalkRequest({ request }: RequestProps): JSX.Element {
   const dispatch = useAppDispatch();
 
   return (
-      <div className={style.card}>
+      <div className={`${style.card} ${(request.status === 'не обработано') ? style.cardUnfinished : (request.status === 'в работе') ? style.cardInWork : style.cardFinished}`}>
         <div className={style.cardBody}>
           <div className={style.row}>
             <div className={style.label}>Имя</div>
@@ -34,30 +34,13 @@ function WalkRequest({ request }: RequestProps): JSX.Element {
           </div>
         </div>
         <div className={style.buttons}>
-          <button className={style.btnChange}>изменить</button>
-          <button className={style.btnDelete}>удалить</button>
+          {request.status !== 'завершено' && (
+            <button className={style.btnChange} onClick={() => dispatch(changeRequest(request))}>изменить</button>
+          )}
+          <button className={style.btnDelete} onClick={() => dispatch(deleteRequest(request))}>удалить</button>
+          
         </div>
       </div>
-
-      // <div className={style.card}>
-      //   <div className={style.head}>
-      //     <div className={style.info}>
-      //       <div><strong>Имя:</strong>{request.name}</div>
-      //       {request.date && (
-      //         <>
-      //           <div><strong>Дата:</strong>{request.date} {request.time}</div>
-      //         </>
-      //       )}
-      //       <div><strong>Номер телефона:</strong>{request.phone}</div>
-      //       <div><strong>Почта:</strong>{request.email}</div>
-      //       <div>
-      //         <button type="button" className={style.btn_change} onClick={() => dispatch(changeRequest(request))}>изменить</button>
-      //         <button type="button"
-      //           className={style.btn_delete} onClick={() => dispatch(deleteRequest(request))}>удалить</button>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>
   )
 }
 
