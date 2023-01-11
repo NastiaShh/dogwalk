@@ -1,10 +1,10 @@
-import Credentials from './types/Credentials';
-import User from './types/User';
+import { RegisteredUser, LoggedUser, User, UserRole } from './types/UserState';
 
-export async function checkUser(): Promise<
+export async function getUser(): Promise<
   | {
       isLoggedIn: true;
       user: User;
+      role: UserRole
     }
   | {
       isLoggedIn: false;
@@ -13,16 +13,38 @@ export async function checkUser(): Promise<
   return (await fetch('/api/auth/user')).json();
 }
 
-export async function login(credentials: Credentials): Promise<User> {
-  const res = await fetch('/api/auth/login', {
+export async function register(user: RegisteredUser): Promise<User> {
+  const response = await fetch('/api/auth/register', {
     method: 'POST',
-    body: JSON.stringify(credentials),
+    body: JSON.stringify(user),
     headers: {
       'Content-Type': 'application/json',
     },
   });
 
-  return res.json();
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
+}
+
+export async function login(user: LoggedUser): Promise<User> {
+  const response = await fetch('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const result = await response.json();
+  if (result.ok) {
+    return result;
+  } else {
+    throw new Error(result.error);
+  }
 }
 
 export async function logout(): Promise<void> {

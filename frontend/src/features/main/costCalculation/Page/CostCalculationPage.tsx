@@ -1,3 +1,4 @@
+import * as React from 'react';
 import style from './CostCalculationPage.module.css';
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
@@ -6,6 +7,11 @@ import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import DogWalkingTabPage from '../DogWalkingTab/Page/DogWalkingTabPage';
+import DogBoardingTabPage from '../DogBoardingTab/Page/DogBoardingTabPage';
+import DogNannyTabPage from '../DogNannyTab/Page/DogNannyTabPage';
+import { changeInitialPrice } from '../priceSlice';
+import { reset } from '../priceSlice';
+import { useAppDispatch } from '../../../../store';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -73,20 +79,27 @@ const TabsContainer = styled(TabsUnstyled)(
 );
 
 export default function CostCalculationPage(): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  const handleServiceChange = (event: React.MouseEvent<HTMLSpanElement>): void => {
+    dispatch(reset());
+    dispatch(changeInitialPrice(event.currentTarget.title));
+  };
+
   return (
-    <div className={style.container}>
-      <h3 className={style.title} id='prices'>Рассчитать стоимость</h3>
-      <TabsContainer defaultValue={0}>
+    <div className={style.container} id='cost'>
+      <h3 className={style.title}>Рассчитать стоимость</h3>
+      <TabsContainer defaultValue={0} >
         <TabsList>
-          <Tab>Выгул собак</Tab>
-          <Tab>Передержка</Tab>
-          <Tab>Няня для собак</Tab>
+          <Tab title='dogWalking' onClick={handleServiceChange}>Выгул собак</Tab>
+          <Tab title='dogBoarding' onClick={handleServiceChange}>Передержка</Tab>
+          <Tab title='dogNanny' onClick={handleServiceChange}>Няня для собак</Tab>
         </TabsList>
         <TabPanel value={0}>
           <DogWalkingTabPage />
         </TabPanel>
-        <TabPanel value={1}><DogWalkingTabPage /></TabPanel>
-        <TabPanel value={2}><DogWalkingTabPage /></TabPanel>
+        <TabPanel value={1}><DogBoardingTabPage /></TabPanel>
+        <TabPanel value={2}><DogNannyTabPage /></TabPanel>
       </TabsContainer>
     </div>
   );
