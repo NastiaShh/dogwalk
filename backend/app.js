@@ -6,6 +6,7 @@ const expressConfig = require('./config/express');
 const walkersRouter = require('./routes/walkers.router')
 const applicationFormsRouter = require('./routes/applicationForms.router')
 const authRouter = require('./routes/auth.router');
+const profileRouter = require('./routes/profile.router');
 
 const app = express();
 
@@ -15,6 +16,7 @@ expressConfig(app);
 app.use('/api/walkers', walkersRouter)
 app.use('/api/forms', applicationFormsRouter)
 app.use('/api/auth', authRouter);
+app.use('/api/profile', profileRouter)
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
