@@ -6,9 +6,7 @@ import style from './ApplicationForm.module.css';
 import { useSelector } from 'react-redux';
 import UserForm from '../UserForm/UserForm';
 import UnregisterUserForm from '../UnregisterUserForm/UnregisterUserForm';
-
-
-
+import dog from './images/dog.png';
 
 function ApplicationForm(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -28,6 +26,7 @@ function ApplicationForm(): JSX.Element {
       ) : (
         <UnregisterUserForm />
       )}
+      <img src={dog} alt='dog' className={style.dog} />
     </form>
   )
 }

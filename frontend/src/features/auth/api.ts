@@ -23,7 +23,7 @@ export async function register(user: RegisteredUser): Promise<User> {
   });
 
   const result = await response.json();
-  if (result.ok) {
+  if (response.ok) {
     return result;
   } else {
     throw new Error(result.error);
@@ -40,13 +40,22 @@ export async function login(user: LoggedUser): Promise<User> {
   });
 
   const result = await response.json();
-  if (result.ok) {
+  if (response.ok) {
     return result;
   } else {
+    console.log(result.error);
     throw new Error(result.error);
   }
 }
 
 export async function logout(): Promise<void> {
-  await fetch('/api/auth/logout', { method: 'POST' });
+  const response = await fetch('/api/auth/logout', { method: 'POST' });
+
+  const result = await response.json();
+  if (response.ok) {
+    return result;
+  } else {
+    console.log(result.error);
+    throw new Error(result.error);
+  }
 }

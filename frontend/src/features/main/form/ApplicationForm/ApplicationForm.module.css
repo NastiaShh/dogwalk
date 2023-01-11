@@ -1,22 +1,24 @@
 .container {
   background-color: #f8efe8;
-  padding-top: 8vh;
+  padding-top: 3vh;
   padding-left: 10%;
   padding-right: 10%;
+  position: relative;
 }
 
 .block {
   width: 100%;
-  height: 400px;
+  height: 450px;
   background: #FFFFFF;
   border-radius: 20px 20px 0 0;
 }
 
 .text {
-  margin: 0px 83px 20px;
-  padding-top: 7vh;
+  margin: 0 83px 20px;
+  padding-top: 60px;
   text-align: left;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .button {
@@ -33,10 +35,11 @@
 .button:hover {
   align-items: center;
   background: #ffb24e;
+  cursor: pointer;
 }
 
 input {
-  margin: 10px 45px 0px 10px;
+  margin: 10px 45px 10px 10px;
   font-size: 18px;
   width: 180px;
   height: 45px;
@@ -49,8 +52,15 @@ input {
   font-family: 'Stratos LC Web';
   color: #545454;
   margin: 0px 83px 20px;
-  padding-top: 20vh;
+  padding-top: 150px;
   text-align: left;
   font-size: 19px;
 }
 
+.dog {
+  position: absolute;
+  bottom: -84px;
+  right: 250px;
+  height: 300px;
+  z-index: 0;
+}
