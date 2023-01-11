@@ -26,6 +26,7 @@ export async function register(user: RegisteredUser): Promise<User> {
   if (response.ok) {
     return result;
   } else {
+    console.log(result.error);
     throw new Error(result.error);
   }
 }

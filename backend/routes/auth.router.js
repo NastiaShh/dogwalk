@@ -37,7 +37,7 @@ authRouter.post('/register', async (req, res) => {
     })
 
     req.session.userId = user.id;
-    res.status(201).json({ user });
+    res.status(201).json({ user, role: user.role });
   } else {
     res.status(401).json({ error: 'Пароли не совпадают' });
   }
