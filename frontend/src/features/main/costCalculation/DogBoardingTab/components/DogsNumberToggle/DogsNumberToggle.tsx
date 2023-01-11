@@ -105,7 +105,7 @@ export default function DogsNumberToggle(): JSX.Element {
               // inputProps={{ 'aria-label': 'controlled' }}
             />
           }
-          label="Первая пробная прогулка"
+          label="Первый пробный день"
         />
       </div>
     </div>

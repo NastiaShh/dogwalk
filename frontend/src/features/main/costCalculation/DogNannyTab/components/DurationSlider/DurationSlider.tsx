@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import { styled } from '@mui/system';
 import PetsIcon from '@mui/icons-material/Pets';
-import { changeWalksNumber } from '../../../priceSlice';
+import { changeHoursNumber } from '../../../priceSlice';
 import { calculateTotalPrice } from '../../../priceSlice';
 import { useAppDispatch } from '../../../../../../store';
 
@@ -29,12 +29,8 @@ const marks = [
     label: '20',
   },
   {
-    value: 25,
-    label: '25',
-  },
-  {
-    value: 30,
-    label: '30',
+    value: 24,
+    label: '24',
   },
 ];
 
@@ -96,18 +92,18 @@ function MyThumbComponent(props: MyThumbComponentProps): JSX.Element {
 }
 
 function valuetext(value: number): string {
-  return `${value} выгулов`;
+  return `${value} часов`;
 }
 
 export default function RangeSlider(): JSX.Element {
   const [value, setValue] = React.useState<number>(1);
   const dispatch = useAppDispatch();
 
-  const handleCountSliderChange = (event: Event, newValue: number | number[]): void => {
+  const handleSliderChange = (event: Event, newValue: number | number[]): void => {
     if (typeof newValue === 'number') {
       setValue(newValue);
 
-      dispatch(changeWalksNumber(newValue));
+      dispatch(changeHoursNumber(newValue));
       dispatch(calculateTotalPrice());
     }
   };
@@ -119,7 +115,7 @@ export default function RangeSlider(): JSX.Element {
         fontSize: '1.2em',
         marginTop: '2.5em',
       }}>
-      Количество выгулов
+      Количество часов
     </div>
     
     <Box sx={{ 
@@ -134,8 +130,8 @@ export default function RangeSlider(): JSX.Element {
         marks={marks}
         valueLabelDisplay="auto"
         min={1}
-        max={30}
-        onChange={handleCountSliderChange}
+        max={24}
+        onChange={handleSliderChange}
       />
     </Box>
     </>

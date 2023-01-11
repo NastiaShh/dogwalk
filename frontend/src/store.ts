@@ -5,7 +5,7 @@ import reviewsSlice from './features/main/reviews/reviewsSlice';
 import requestsSlice from './features/main/form/requestsSlice';
 import walkersSlice from './features/walkers/walkersSlice';
 import authSlice from './features/auth/authSlice';
-import priceSlice from './features/main/costCalculation/DogWalkingTab/priceSlice';
+import priceSlice from './features/main/costCalculation/priceSlice';
 
 const store = configureStore({
   // теперь функция combineReducers не нужна
