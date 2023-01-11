@@ -1,9 +1,10 @@
 import React from 'react';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch } from '../../../store';
 // import { useNavigate } from 'react-router-dom';
-import { login } from './authSlice';
+import { login } from '../authSlice';
+import style from './LoginForm.module.css';
 
-function LoginPage(): JSX.Element {
+function LoginForm(): JSX.Element {
   const dispatch = useAppDispatch();
   // const navigate = useNavigate();
 
@@ -27,37 +28,30 @@ function LoginPage(): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Вход</h2>
-      <div>
-        <label htmlFor="email-input">
-          Email
-        </label>
-        <input
-          type="text"
-          id="email-input"
-          name="email"
-          value={email}
-          onChange={handleNameChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password-input">
-          Пароль
-        </label>
-        <input
-          type="password"
-          id="password-input"
-          name="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </div>
-      <button type="submit">
-        Войти
+    <form onSubmit={handleSubmit} className={style.container}>
+      <input
+        type="text"
+        id="email-input"
+        name="email"
+        value={email}
+        onChange={handleNameChange}
+        placeholder="Email"
+        className={style.input}
+      />
+      <input
+        type="password"
+        id="password-input"
+        name="password"
+        value={password}
+        onChange={handlePasswordChange}
+        placeholder="Пароль"
+        className={style.input}
+      />
+      <button type="submit" className={style.button}>
+        войти
       </button>
     </form>
   );
 }
 
-export default LoginPage;
+export default LoginForm;

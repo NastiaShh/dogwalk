@@ -25,21 +25,21 @@ const authSlice = createSlice({
     builder
       .addCase(register.fulfilled, (state, action) => {
         const user = action.payload;
+        const role = action.payload.role;
         state.user = user;
         state.authChecked = true;
+        state.role = role;
       })
       .addCase(register.rejected, (state, action) => {
         state = initialState;
         console.log(action.error.message);
       })
       .addCase(login.fulfilled, (state, action) => {
-        if (action.payload) {
-          const user = action.payload;
-          const role = action.payload.role;
-          state.user = user;
-          state.authChecked = true;
-          state.role = role;
-        }
+        const user = action.payload;
+        const role = action.payload.role;
+        state.user = user;
+        state.authChecked = true;
+        state.role = role;
       })
       .addCase(login.rejected, (state, action) => {
         // в action.error попадёт ошибка сгенерированная санком
