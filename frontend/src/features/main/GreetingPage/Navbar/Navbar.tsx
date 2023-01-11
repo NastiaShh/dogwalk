@@ -1,4 +1,5 @@
 import style from '../GreetingPage.module.css';
+import TransitionsModal from '../../../auth/TransitionsModal/TransitionsModal';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../../../store';
 import { logout } from '../../../auth/authSlice';
@@ -31,6 +32,9 @@ function Navbar(): JSX.Element {
           <a href="#cost" className={style.link}>Стоимость</a>
           <a href="#questions" className={style.link}>Вопросы</a>
           <a href="#reviews" className={style.link}>Отзывы</a>
+          <span className={style.link}>
+            <TransitionsModal />
+          </span>
         </>
       )}
     </nav>
