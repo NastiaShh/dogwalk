@@ -7,6 +7,8 @@ export const register = createAsyncThunk('api/auth/register', async (user: Regis
 
 export const login = createAsyncThunk('api/auth/login', async (user: LoggedUser) => api.login(user));
 
+export const logout = createAsyncThunk('api/auth/logout', () => api.logout());
+
 export const checkUser = createAsyncThunk('api/auth/user', () => api.getUser());
 
 const initialState: AuthState = {
@@ -45,9 +47,19 @@ const authSlice = createSlice({
         // state.loading = false;
         console.log(action.error.message);
       })
+      .addCase(logout.fulfilled, (state, action) => {
+        state.authChecked = false;
+        state.user = undefined;
+        state.role = '';
+      })
+      .addCase(logout.rejected, (state, action) => {
+        console.log(action.error.message);
+      })
       .addCase(checkUser.fulfilled, (state, action) => {
         if (!action.payload.isLoggedIn) {
-          state = initialState;
+          state.authChecked = false;
+          state.user = undefined;
+          state.role = '';
         } else {
           state.user = action.payload.user;
           state.role = action.payload.role
