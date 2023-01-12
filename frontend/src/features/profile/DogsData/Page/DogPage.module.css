@@ -1,0 +1,12 @@
+.buttonNext {
+  width: 130px;
+  height: 50px;
+  margin-top: 30px;
+  padding-bottom: 4px;
+  font-size: 22px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  background-color: #FF9A16;
+  cursor: pointer;
+}

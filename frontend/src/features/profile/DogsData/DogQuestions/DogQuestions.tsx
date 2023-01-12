@@ -1,7 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
 
-
 function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
   return (
     <>
@@ -68,11 +67,6 @@ function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Ele
         <input type="radio" id="male" {...register("vaccination")} />
         <label htmlFor="male">male</label>
       </div>
-
-
-      <button type="button">
-        далее
-      </button>
     </>
   )
 }
