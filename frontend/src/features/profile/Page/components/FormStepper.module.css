@@ -1,0 +1,18 @@
+.stepsIcon {
+  height: 3em;
+  display: inline-block;
+}
+
+.stepper {
+  align-items: center !important;
+  justify-content: center;
+  gap: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex: none !important;
+  -webkit-flex: none !important;
+}

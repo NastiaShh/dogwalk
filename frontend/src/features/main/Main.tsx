@@ -11,8 +11,8 @@ import ApplicationForm from './form/ApplicationForm/ApplicationForm';
 import { RootState, useAppDispatch } from '../../store';
 import { checkUser } from '../auth/authSlice';
 // import { useSelector } from 'react-redux';
-// import AdminPanel from '../admin/AdminPanel/AdminPanel';
-import AdminPanel from '../admin/AdminPanel/AdminPanel'
+import AdminPanel from '../admin/AdminPanel/AdminPanel';
+import ProfilePage from '../profile/Page/ProfilePage';
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,6 +27,7 @@ function Main(): JSX.Element {
 
   return (
     <div>
+      <ProfilePage />
       <AdminPanel />
       <GreetingPage />
       <AboutPage />

@@ -16,6 +16,7 @@ import style from './ProfilePage.module.css';
 import FormStepper from './components/FormStepper'
 import DogPage from '../DogsData/Page/DogPage';
 import dogIcon from './icons/dogIcon.svg';
+import plusIcon from './icons/plusIcon.svg';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -93,19 +94,20 @@ export default function ProfilePage(): JSX.Element {
           <div className={`${style.tabLabel} ${style.userPageLabel}`} title='userPage' onClick={handleTabChange}>Основные данные</div>
           <div className={`${style.tabLabel} ${style.dogPageLabel}`} title='dogPage' onClick={handleTabChange}>Мои собаки</div>
           <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}><img className={style.dogIcon} src={dogIcon} alt='dog'/>Сирена</div>
+          <img className={style.plusIcon} src={plusIcon} alt='plus' />
         </div>
         <div className={style.content}>
           {selectedTab === 'userPage' && (
             <>
             <h3>Основные данные</h3>
-            <DogPage />
+            {/* <DogPage /> */}
             </>
           )}
           {selectedTab === 'dogPage' && (
             <>
             <h3>Мои собаки</h3>
             <FormStepper />
-            <DogPage />
+            {/* <DogPage /> */}
             </>
           )}          
         </div>
@@ -119,7 +121,7 @@ export default function ProfilePage(): JSX.Element {
           <Tab>Няня для собак</Tab>
         </TabsList>
         <TabPanel value={0}>
-          <DogPage />
+          {/* <DogPage /> */}
         </TabPanel>
         <TabPanel value={1}></TabPanel>
         <TabPanel value={2}></TabPanel>
