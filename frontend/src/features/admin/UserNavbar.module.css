@@ -1,15 +1,11 @@
 .nav {
-  height: max-content;
-  margin: 30px 5vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  z-index: 1;
-  /* background-color: #f8efe8; */
+  background-color: #f8efe8;
+  height: 40px;
+  align-items: center;
 }
 
 .link {
   text-decoration: none;
   color: #FF9A16;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
