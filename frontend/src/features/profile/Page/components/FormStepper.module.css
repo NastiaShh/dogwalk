@@ -16,3 +16,29 @@
   flex: none !important;
   -webkit-flex: none !important;
 }
+
+.btn {
+  border: none;
+  border-radius: 17px;
+  font-size: 0.8em;
+  padding: 0.6em 1.3em;
+  background-color: #ff9a16;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnNext {
+  /* border: none;
+  border-radius: 17px;
+  font-size: 1em;
+  padding: 0.6em 1.3em;
+  background-color: #ff9a16;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer; */
+}
+
+.btn:disabled {
+  background-color: #c1c1c1;
+}

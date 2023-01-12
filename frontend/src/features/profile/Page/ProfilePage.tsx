@@ -111,21 +111,7 @@ export default function ProfilePage(): JSX.Element {
             </>
           )}          
         </div>
-        
       </div>
-
-      <TabsUnstyled  defaultValue={0} >
-        <TabsList >
-          <Tab>Выгул собак</Tab>
-          <Tab>Передержка</Tab>
-          <Tab>Няня для собак</Tab>
-        </TabsList>
-        <TabPanel value={0}>
-          {/* <DogPage /> */}
-        </TabPanel>
-        <TabPanel value={1}></TabPanel>
-        <TabPanel value={2}></TabPanel>
-      </TabsUnstyled >
     </div>
   );
 };

@@ -74,46 +74,23 @@ export default function FormStepper(): JSX.Element {
     setCompleted({});
   };
 
-  const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-    [`&.${stepConnectorClasses.alternativeLabel}`]: {
-      top: 22,
-    },
-    [`&.${stepConnectorClasses.active}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundImage:
-          'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-      },
-    },
-    [`&.${stepConnectorClasses.completed}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundImage:
-          'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-      },
-    },
-    [`& .${stepConnectorClasses.line}`]: {
-      height: 3,
-      border: 0,
-      backgroundColor:
-        theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
-      borderRadius: 1,
-    },
-  }));
+  const handleBtnClick = (): void => {
+    (completedSteps() === totalSteps() - 1) ? handleComplete() : handleNext();
+  }
   
-  const ColorlibStepIconRoot = styled('div')<{
+  const StepIconRoot = styled('div')<{
     ownerState: { completed?: boolean; active?: boolean };
   }>(({ theme, ownerState }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
     zIndex: 1,
     color: '#fff',
-    width: 50,
+    width: 70,
     height: 50,
     display: 'flex',
-    borderRadius: '50%',
+    borderRadius: '20px',
     justifyContent: 'center',
     alignItems: 'center',
     ...(ownerState.active && {
-      // backgroundImage:
-      //   'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
       backgroundColor: '#398a6a',
       color: '#000',
     }),
@@ -126,16 +103,16 @@ export default function FormStepper(): JSX.Element {
   function ColorlibStepIcon(props: StepIconProps): JSX.Element {
     const { active, completed, className } = props;
   
-    const icons: { [index: string]: React.ReactElement } = {
-      1: <SettingsIcon />,
-      2: <GroupAddIcon />,
-      3: <VideoLabelIcon />,
+    const icons: { [index: string]: number } = {
+      1: 1,
+      2: 2,
+      3: 3,
     };
   
     return (
-      <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+      <StepIconRoot ownerState={{ completed, active }} className={className}>
         {icons[String(props.icon)]}
-      </ColorlibStepIconRoot>
+      </StepIconRoot>
     );
   }
 
@@ -177,31 +154,25 @@ export default function FormStepper(): JSX.Element {
           <React.Fragment>            
             <DogPage activeStep={activeStep}/>
 
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Button
-                color="inherit"
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', pt: 2 }}>
+              <button
+                className={`${style.btn} ${style.btnBack}`} 
                 disabled={activeStep === 0}
                 onClick={handleBack}
-                sx={{ mr: 1 }}
               >
-                Back
-              </Button>
+                назад
+              </button>
               <Box sx={{ flex: '1 1 auto' }} />
-              <Button onClick={handleNext} sx={{ mr: 1 }}>
-                Next
-              </Button>
-              {activeStep !== steps.length &&
-                (completed[activeStep] ? (
+              <button className={`${style.btn} ${style.btnNext}`} onClick={handleBtnClick}>
+                {completedSteps() === totalSteps() - 1
+                        ? 'готово'
+                        : 'далее'}
+              </button>
+              {/* {activeStep !== steps.length && (
                   <Typography variant="caption" sx={{ display: 'inline-block' }}>
                     Step {activeStep + 1} already completed
                   </Typography>
-                ) : (
-                  <Button onClick={handleComplete}>
-                    {completedSteps() === totalSteps() - 1
-                      ? 'Finish'
-                      : 'Complete Step'}
-                  </Button>
-                ))}
+                )} */}
             </Box>
           </React.Fragment>
         )}
