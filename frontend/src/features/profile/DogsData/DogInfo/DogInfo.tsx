@@ -10,7 +10,6 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
         <input
           type="text"
           placeholder="Шарик"
-          className={style.input}
           {...register("name")}
         />
       </div>
@@ -19,7 +18,6 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
         <input
           type="text"
           placeholder="Сиба-ину"
-          className={style.input}
           {...register('breed')}
         />
       </div>
@@ -29,7 +27,7 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
           <input
             type="number"
             placeholder="5"
-            className={`${style.input} ${style.ageInput}`}
+            className={style.ageInput}
             {...register('age')}
           />
           <span className={style.ageSpan}>лет</span>
