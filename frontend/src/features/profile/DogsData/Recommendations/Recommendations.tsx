@@ -1,7 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
 import style from './Recommendations.module.css';
-// import styles from './../Page/DogPage.module.css';
 
 function Recommendations({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
   return (
@@ -13,7 +12,7 @@ function Recommendations({ register }: { register: UseFormRegister<Dog> }): JSX.
         placeholder="Напишите сюда сведения о собаке (индивидуальные особенности,
           режим питания, состояние здоровья и другие рекомендации)"
       />
-      {/* <button type="submit" className={styles.buttonNext}>
+      {/* <button type="submit" className={style.buttonNext}>
         готово
       </button> */}
     </div>
