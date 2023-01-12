@@ -1,0 +1,63 @@
+.page {
+  background-color: #f8efe8;
+  padding: 3em 7em;
+}
+
+.container {  
+  /* padding: 2em 3em; */
+  display: flex;
+  margin: auto;
+  height: 80%;
+  /* flex-direction: column; */
+}
+
+.tabs {
+  background-color: #f4f4f4;
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+  height: fit-content;
+  width: 22%;
+  padding: 1.2em 1em;
+}
+
+.content {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 19px;
+  border-top-left-radius: 0px;
+}
+
+.tabLabel {
+  cursor: pointer;
+}
+
+.userPageLabel {
+  color: #808080;
+  margin-bottom: 1.7em;
+}
+
+.userPageLabel::selected {
+  color: red;
+}
+
+.dogPageLabel {
+  color: #000;
+  margin-bottom: 0.8em;
+}
+
+.dogIcon {
+  height: 1.3em;
+  margin-right: 0.5em;
+  margin-bottom: -0.1em;
+}
+
+.dogLabel {
+  font-size: 0.8em;
+  color: #808080;
+}
+
+.plusIcon {
+  width: 1.7em;
+  margin-top: 0.7em;
+  margin-bottom: 2em;
+}
