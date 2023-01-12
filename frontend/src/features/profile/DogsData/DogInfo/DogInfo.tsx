@@ -1,7 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
 import style from './DogInfo.module.css'
-import styles from './../Page/DogPage.module.css';
 
 function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
   return (
@@ -44,9 +43,6 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
           <option value="большая">Большая</option>
         </select>
       </div>
-      <button type="button" className={styles.buttonNext}>
-        далее
-      </button>
     </div>
   )
 }
