@@ -23,8 +23,12 @@ authRouter.post('/register', async (req, res) => {
 
   const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
-    res.status(401).json({ error: 'Такой пользователь уже есть' });
+    res.status(401).json({ error: 'Пользователь с такой почтой уже есть' });
     return;
+  }
+
+  if (!name) {
+    res.status(401).json({ error: 'Укажите имя пользователя' });
   }
 
   if (password === passwordRepeat) {

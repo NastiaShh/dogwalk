@@ -4,8 +4,9 @@ type AuthState = {
   authChecked: boolean;
   user?: User;
   role: UserRole;
-  // emailError?: string,
-  // loginError?: string,
+  // loginError?: string;
+  // registerError?: string;
+  authError?: string;
 };
 
 export default AuthState;

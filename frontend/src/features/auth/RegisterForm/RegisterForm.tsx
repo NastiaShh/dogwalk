@@ -1,93 +1,76 @@
-import React from 'react';
 import { useAppDispatch } from '../../../store';
-// import { useNavigate } from 'react-router-dom';
-import { register } from '../authSlice';
+import { useForm } from 'react-hook-form';
+import { registerUser } from '../authSlice';
 import style from './RegisterForm.module.css';
+import { RegisteredUser } from '../types/UserState';
+import { useSelector } from 'react-redux';
+import { selectAuthError } from '../selectors';
 
 function RegisterForm(): JSX.Element {
   const dispatch = useAppDispatch();
-  // const navigate = useNavigate();
 
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [phone, setPhone] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [passwordRepeat, setPasswordRepeat] = React.useState('');
+  const authError = useSelector(selectAuthError);
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setName(event.target.value);
-  };
-  
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setEmail(event.target.value);
-  };
-  
-  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setPhone(event.target.value);
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<RegisteredUser>();
 
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setPassword(event.target.value);
-  };
+  const handleFormSubmit = handleSubmit(async (data) => {
+    const dispatchResult = await dispatch(registerUser(data));
 
-  const handlePasswordRepeatChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setPasswordRepeat(event.target.value);
-  };
-
-  const handleSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
-
-    dispatch(register({ name, email, phone, password, passwordRepeat }));
-    // navigate('/');
-  };
+    if (registerUser.fulfilled.match(dispatchResult)) {
+      reset();
+    }
+  });
 
   return (
-    <form onSubmit={handleSubmit} className={style.container}>
+    <form onSubmit={handleFormSubmit} className={style.container}>
+      {authError && <div className={style.error}>{authError}</div>}
       <input
         type="text"
         id="name-input"
-        name="name"
-        value={name}
-        onChange={handleNameChange}
         placeholder="Имя"
         className={style.input}
+        {...register('name', { required: 'Укажите имя пользователя' })}
       />
+      {errors.name && <div className={style.error}>{errors.name.message}</div>}
       <input
         type="text"
         id="email-input"
-        name="email"
-        value={email}
-        onChange={handleEmailChange}
         placeholder="Email"
         className={style.input}
+        {...register('email', { required: 'Укажите email пользователя' })}
       />
+      {errors.email && <div className={style.error}>{errors.email.message}</div>}
       <input
-        type="text"
+        type="tel"
         id="phone-input"
-        name="phone"
-        value={phone}
-        onChange={handlePhoneChange}
         placeholder="+7 (999) 999 99 99"
         className={style.input}
+        {...register('phone', { required: 'Укажите телефон пользователя' })}
       />
+      {errors.phone && <div className={style.error}>{errors.phone.message}</div>}
       <input
         type="password"
         id="password-input"
-        name="password"
-        value={password}
-        onChange={handlePasswordChange}
+        minLength={6}
         placeholder="Пароль"
         className={style.input}
+        {...register('password', { required: 'Придумайте пароль' })}
       />
+      {errors.password && <div className={style.error}>{errors.password.message}</div>}
       <input
         type="password"
         id="password-repeat-input"
-        name="password-repeat"
-        value={passwordRepeat}
-        onChange={handlePasswordRepeatChange}
+        minLength={6}
         placeholder="Повторите пароль"
         className={style.input}
+        {...register('passwordRepeat', { required: 'Повторите пароль' })}
       />
+      {errors.passwordRepeat && <div className={style.error}>{errors.passwordRepeat.message}</div>}
       <button type="submit" className={style.button}>
         зарегистрироваться
       </button>

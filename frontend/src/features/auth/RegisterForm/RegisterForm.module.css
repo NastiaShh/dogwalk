@@ -26,3 +26,8 @@
   background: #ffb24e;
   cursor: pointer;
 }
+
+.error {
+  color: #FF9A16;
+  font-size: 20px;
+}

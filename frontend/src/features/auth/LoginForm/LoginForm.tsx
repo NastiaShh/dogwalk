@@ -1,52 +1,50 @@
-import React from 'react';
 import { useAppDispatch } from '../../../store';
-// import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import { login } from '../authSlice';
 import style from './LoginForm.module.css';
+import { LoggedUser } from '../types/UserState';
+import { useSelector } from 'react-redux';
+import { selectAuthError } from '../selectors';
 
 function LoginForm(): JSX.Element {
   const dispatch = useAppDispatch();
-  // const navigate = useNavigate();
 
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const authError = useSelector(selectAuthError);
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setEmail(event.target.value);
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<LoggedUser>();
 
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setPassword(event.target.value);
-  };
+  const handleFormSubmit = handleSubmit(async (data) => {
+    const dispatchResult = await dispatch(login(data));
 
-  const handleSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
-
-    // делаем dispatch, чтобы положить юзера в стэйт
-    dispatch(login({ email, password }));
-    // navigate('/');
-  };
+    if (login.fulfilled.match(dispatchResult)) {
+      reset();
+    }
+  });
 
   return (
-    <form onSubmit={handleSubmit} className={style.container}>
+    <form onSubmit={handleFormSubmit} className={style.container}>
+      {authError && <div className={style.error}>{authError}</div>}
       <input
         type="text"
         id="email-input"
-        name="email"
-        value={email}
-        onChange={handleNameChange}
         placeholder="Email"
         className={style.input}
+        {...register('email', { required: 'Укажите имя пользователя' })}
       />
+      {errors.email && <div className={style.error}>{errors.email.message}</div>}
       <input
         type="password"
         id="password-input"
-        name="password"
-        value={password}
-        onChange={handlePasswordChange}
         placeholder="Пароль"
         className={style.input}
+        {...register('password', { required: 'Придумайте пароль' })}
       />
+      {errors.password && <div className={style.error}>{errors.password.message}</div>}
       <button type="submit" className={style.button}>
         войти
       </button>
