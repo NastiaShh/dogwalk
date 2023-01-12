@@ -18,7 +18,7 @@ function UserForm({register}: {register: UseFormRegister<Request>}): JSX.Element
       />
       <input
         type="email"
-        placeholder="email"
+        placeholder="Email"
         {...register("email")}
       />
       <input
