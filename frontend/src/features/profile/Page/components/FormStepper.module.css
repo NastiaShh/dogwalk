@@ -29,6 +29,10 @@
   min-width: 6em;
 }
 
+.btn:hover {
+  opacity: 0.7;
+}
+
 .btnNext {
   /* border: none;
   border-radius: 17px;
@@ -42,6 +46,7 @@
 
 .btn:disabled {
   background-color: #c1c1c1;
+  opacity: 1;
 }
 
 /* .MuiBox-root {

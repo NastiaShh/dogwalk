@@ -4,6 +4,7 @@
   text-align: left;
   font-size: 0.75em;
   display: flex;
+  color: #f8efe8;
 }
 
 .title {
@@ -45,7 +46,7 @@
   padding-bottom: 0.3em;
   border-bottom: 1px solid;
   text-decoration: none;
-  color: #303030;
+  color: #f8efe8;
 }
 
 .a:hover {

@@ -92,7 +92,7 @@ export default function FormStepper(): JSX.Element {
     alignItems: 'center',
     ...(ownerState.active && {
       backgroundColor: '#398a6a',
-      color: '#000',
+      color: '#f8efe8',
     }),
     // ...(ownerState.completed && {
     //   backgroundImage:
