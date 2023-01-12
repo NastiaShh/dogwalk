@@ -1,8 +1,13 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog';
 import style from './DogQuestions.module.css';
+import { useSelector } from 'react-redux';
+import { selectDog } from '../../selectors';
 
-function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
+function DogQuestions({ register, selectedDogName }: { register: UseFormRegister<Dog>, selectedDogName: string }): JSX.Element {
+  const dogs = useSelector(selectDog);
+  const dog = dogs.filter((dog) => dog.name === selectedDogName)[0];
+  
   return (
     <div className={style.container}>
       <p className={style.parameterTitle}>Пол</p>
