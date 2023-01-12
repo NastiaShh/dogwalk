@@ -59,7 +59,7 @@ function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Ele
         <label htmlFor="male" className={style.label}>Да, на пару часов</label>
 
         <input type="radio" id="male" {...register("home")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>С собакой всегда кто-то дома</label>
+        <label htmlFor="male" className={style.label}>С собакой всегда кто&#8209;то&nbsp;дома</label>
       </div>
 
       <p className={style.parameterTitle}>Собака вакцинирована?</p>
