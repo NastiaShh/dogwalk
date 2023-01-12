@@ -1,6 +1,6 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
-
+import styles from './../Page/DogPage.module.css';
 
 function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
   return (
@@ -69,8 +69,7 @@ function DogQuestions({ register }: { register: UseFormRegister<Dog> }): JSX.Ele
         <label htmlFor="male">male</label>
       </div>
 
-
-      <button type="button">
+      <button type="button" className={styles.buttonNext}>
         далее
       </button>
     </>
