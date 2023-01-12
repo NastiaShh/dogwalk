@@ -42,3 +42,8 @@
 .btn:disabled {
   background-color: #c1c1c1;
 }
+
+/* .MuiBox-root {
+  flex: 0 0 auto !important;
+  -webkit-flex: none !important;
+}  */

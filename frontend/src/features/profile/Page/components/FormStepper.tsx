@@ -154,7 +154,7 @@ export default function FormStepper(): JSX.Element {
           <React.Fragment>            
             <DogPage activeStep={activeStep}/>
 
-            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', pt: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', pt: 2, gap: '0.6em', marginBottom: '2em' }}>
               <button
                 className={`${style.btn} ${style.btnBack}`} 
                 disabled={activeStep === 0}
@@ -162,12 +162,17 @@ export default function FormStepper(): JSX.Element {
               >
                 назад
               </button>
-              <Box sx={{ flex: '1 1 auto' }} />
-              <button className={`${style.btn} ${style.btnNext}`} onClick={handleBtnClick}>
-                {completedSteps() === totalSteps() - 1
-                        ? 'готово'
-                        : 'далее'}
-              </button>
+              {activeStep !== totalSteps() - 1 && (
+                <button className={`${style.btn} ${style.btnNext}`} onClick={handleBtnClick}>
+                  далее
+                </button>
+              )}
+              {/* <button className={`${style.btn} ${style.btnNext}`} onClick={handleBtnClick}>
+                  {activeStep === totalSteps() - 1
+                          ? 'готово'
+                          : 'далее'}                  
+                </button> */}
+              
               {/* {activeStep !== steps.length && (
                   <Typography variant="caption" sx={{ display: 'inline-block' }}>
                     Step {activeStep + 1} already completed
