@@ -64,3 +64,12 @@ input {
   height: 300px;
   z-index: 0;
 }
+
+.message_text {
+  font-family: 'Stratos LC Web';
+  color: #545454;
+  margin: 0px 83px -28px;
+  /* padding-top: 10px; */
+  text-align: left;
+  font-size: 19px;
+}
