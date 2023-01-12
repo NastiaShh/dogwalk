@@ -8,6 +8,7 @@ import CostCalculationPage from './costCalculation/Page/CostCalculationPage';
 import ApplicationForm from './form/ApplicationForm/ApplicationForm';
 import { RootState, useAppDispatch } from '../../store';
 import { checkUser } from '../auth/authSlice';
+import FormStepper from '../profile/Page/components/FormStepper';
 // import { useSelector } from 'react-redux';
 
 function Main(): JSX.Element {
@@ -23,6 +24,7 @@ function Main(): JSX.Element {
 
   return (
     <div>
+      <FormStepper/>
       <GreetingPage />
       <AboutPage />
       <CostCalculationPage />
