@@ -18,7 +18,7 @@ function UnregisterUserForm({register}: {register: UseFormRegister<Request>}): J
       />
       <input
         type="email"
-        placeholder="email"
+        placeholder="Email"
         {...register("email")}
       />
       <button type="submit" className={style.button}>
