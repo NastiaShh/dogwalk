@@ -19,17 +19,17 @@ function UserData(): JSX.Element {
 
           <div>
             <label htmlFor="firstName">Имя</label>
-            <input id="firstName" type="text" defaultValue={user?.name} />
+            <input id="firstName" type="text" defaultValue={user?.name} disabled />
           </div>
 
           <div>
             <label htmlFor="phone">Номер телефона</label>
-            <input id="phone" type="phone" defaultValue={user?.phone} />
+            <input id="phone" type="phone" defaultValue={user?.phone} disabled />
           </div>
 
           <div>
             <label htmlFor="email">Электронная почта</label>
-            <input id="email" type="email" defaultValue={user?.email} />
+            <input id="email" type="email" defaultValue={user?.email} disabled />
           </div>
 
         </form>
