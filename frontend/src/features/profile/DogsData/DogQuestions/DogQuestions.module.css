@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 15px;
+}
+
+.parameterTitle {
+  margin: 20px 0 10px;
+}
+
+.parameterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.label {
+  margin-right: 30px;
+}
+
+.inputContainer {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
