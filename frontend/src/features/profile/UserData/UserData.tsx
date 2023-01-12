@@ -12,7 +12,7 @@ function UserData(): JSX.Element {
   }, [dispatch])
   return (
     <div>
-      <h1>Основные данные</h1>
+      {/* <h1>Основные данные</h1> */}
 
       <div>
         <form >

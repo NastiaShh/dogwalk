@@ -97,20 +97,22 @@ export default function ProfilePage(): JSX.Element {
       <div className={style.container}>
         <div className={style.tabs}>
           <div className={`${style.tabLabel} ${style.userPageLabel}`} title='userPage' onClick={handleTabChange}>Основные данные</div>
-          <div className={`${style.tabLabel} ${style.dogPageLabel}`} title='dogPage' onClick={handleTabChange}>Мои собаки</div>
-          <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}><img className={style.dogIcon} src={dogIcon} alt='dog' />Сирена</div>
+          <div className={`${style.tabLabel} ${style.dogPageLabel}`} title='dogPage'>Мои собаки</div>
+          <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}>
+            <img className={style.dogIcon} src={dogIcon} alt='dog' onClick={handleTabChange} />Сирена
+          </div>
           <img className={style.plusIcon} src={plusIcon} alt='plus' />
         </div>
         <div className={style.content}>
           {selectedTab === 'userPage' && (
             <>
-              <h3>Основные данные</h3>
+              <h2>Основные данные</h2>
               <UserData />
             </>
           )}
           {selectedTab === 'dogPage' && (
             <>
-              <h3>Мои собаки</h3>
+              <h2>Мои собаки</h2>
               <FormStepper />
               {/* <DogPage /> */}
             </>
