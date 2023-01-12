@@ -3,7 +3,7 @@ import AuthState from './types/AuthState';
 import { RegisteredUser, LoggedUser } from './types/UserState';
 import * as api from './api';
 
-export const register = createAsyncThunk('api/auth/register', async (user: RegisteredUser) => api.register(user));
+export const registerUser = createAsyncThunk('api/auth/register', async (user: RegisteredUser) => api.register(user));
 
 export const login = createAsyncThunk('api/auth/login', async (user: LoggedUser) => api.login(user));
 
@@ -23,16 +23,19 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(registerUser.fulfilled, (state, action) => {
         const user = action.payload;
         const role = action.payload.role;
         state.user = user;
         state.authChecked = true;
         state.role = role;
+        state.registerError = undefined;
       })
-      .addCase(register.rejected, (state, action) => {
-        state = initialState;
-        console.log(action.error.message);
+      .addCase(registerUser.rejected, (state, action) => {
+        state.authChecked = false;
+        state.user = undefined;
+        state.role = '';
+        state.registerError = action.error.message;
       })
       .addCase(login.fulfilled, (state, action) => {
         const user = action.payload;
@@ -40,12 +43,13 @@ const authSlice = createSlice({
         state.user = user;
         state.authChecked = true;
         state.role = role;
+        state.loginError = undefined;
       })
       .addCase(login.rejected, (state, action) => {
-        // в action.error попадёт ошибка сгенерированная санком
-        // state.loadError = action.error.message;
-        // state.loading = false;
-        console.log(action.error.message);
+        state.authChecked = false;
+        state.user = undefined;
+        state.role = '';
+        state.loginError = action.error.message;
       })
       .addCase(logout.fulfilled, (state, action) => {
         state.authChecked = false;
@@ -65,8 +69,6 @@ const authSlice = createSlice({
           state.role = action.payload.role
           state.authChecked = action.payload.isLoggedIn;
         }
-        // console.log(action.payload.isLoggedIn);
-        // console.log(state.authChecked);
       })
   },
 });
