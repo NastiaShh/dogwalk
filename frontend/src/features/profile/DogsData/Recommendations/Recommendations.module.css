@@ -5,7 +5,8 @@
 }
 
 .title {
-  margin: 40px auto;
+  margin: 40px auto 30px;
+  font-weight: 500;
 }
 
 .description {
@@ -15,8 +16,10 @@
   border: 1.5px solid #FF9A16;
   border-radius: 10px;
   outline: none;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 .buttonNext {
