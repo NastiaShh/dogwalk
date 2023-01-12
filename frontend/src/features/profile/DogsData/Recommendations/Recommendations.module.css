@@ -39,4 +39,5 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: 30px;
+  min-width: 6em;
 }
