@@ -10,10 +10,11 @@ import dog from './images/dog.png';
 
 function ApplicationForm(): JSX.Element {
   const dispatch = useAppDispatch();
-  const { handleSubmit } = useForm<Request>();
+  const { register, handleSubmit, reset } = useForm<Request>();
 
   const onSubmit = (data: Request): void => {
     dispatch(createRequest(data));
+    reset()
   };
 
   const { authChecked } = useSelector((state: RootState) => state.auth)
@@ -22,9 +23,9 @@ function ApplicationForm(): JSX.Element {
     <form onSubmit={handleSubmit(onSubmit)} className={style.container} id='form'>
       <h1>Записаться на консультацию</h1>
       {authChecked ? (
-        <UserForm />
+        <UserForm register={register} />
       ) : (
-        <UnregisterUserForm />
+        <UnregisterUserForm register={register} />
       )}
       <img src={dog} alt='dog' className={style.dog} />
     </form>

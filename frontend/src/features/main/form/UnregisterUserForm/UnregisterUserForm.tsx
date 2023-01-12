@@ -1,11 +1,8 @@
 import Request from '../types/Request'
-import { useForm } from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 import style from '../ApplicationForm/ApplicationForm.module.css';
 
-function UnregisterUserForm(): JSX.Element {
-  const { register } = useForm<Request>();
-
-
+function UnregisterUserForm({register}: {register: UseFormRegister<Request>}): JSX.Element {
   return (
     <div className={style.block}>
       <p className={style.text}>Остались вопросы или у Вас есть особые пожелания?<br></br>Заполните заявку и наш менеджер свяжется с Вами для уточнения всех деталей </p>

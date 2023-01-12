@@ -1,0 +1,27 @@
+.container {
+  background-color: #F8EFE8;
+  background-image: url('./images/paws.png');
+  background-size: 35%;
+  background-position: bottom 0 right 0;
+  background-repeat: no-repeat;
+  border: 2px solid #398A6A;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.title {
+  padding-bottom: 4px;
+  color: #737373;
+  cursor: pointer;
+}
+
+.titleActive {
+  padding-bottom: 3px;
+  border-bottom: 1px solid;
+  color: #0F0F0F;
+  cursor: pointer;
+}

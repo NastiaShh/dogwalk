@@ -9,15 +9,28 @@ module.exports = {
         name: 'kot',
         breed: 'sebek',
         age: 5,
-        size: 'bolshoy',
-        gender: 'male',
-        sterilization: 'z',
-        dog_friendly: 'z',
-        cat_friendly: 'z',
-        overexposure: 'z',
-        home: 'z',
-        vaccination: 'z',
-        description: 'z'
+        size: 'Большая',
+        gender: 'Мальчик',
+        sterilization: 'Да',
+        dog_friendly: 'Да',
+        cat_friendly: 'Нет',
+        home: 'Да, пока я на работе',
+        vaccination: 'Да',
+        description: '----------------'
+      },
+      {
+        user_id: 3,
+        name: 'Лапка',
+        breed: 'Сиба-ину',
+        age: 7,
+        size: 'Средняя',
+        gender: 'Девочка',
+        sterilization: 'Да',
+        dog_friendly: 'Да',
+        cat_friendly: 'Да',
+        home: 'С собакой всегда кто-то дома',
+        vaccination: 'Да',
+        description: 'она зайка'
       }
     ]);
   },
