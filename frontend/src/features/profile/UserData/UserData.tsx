@@ -35,7 +35,7 @@ function UserData(): JSX.Element {
         </form>
 
         <div>
-          <img src={user?.photo} alt="фотография пользователя" />
+          {/* <img src={user?.photo} alt="фотография пользователя" /> */}
         </div>
       </div>
     </div>

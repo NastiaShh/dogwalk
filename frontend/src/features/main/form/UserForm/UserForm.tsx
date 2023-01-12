@@ -34,7 +34,7 @@ function UserForm({register}: {register: UseFormRegister<Request>}): JSX.Element
       <button type="submit" className={style.button}>
         свяжитесь со мной
       </button>
-      <p className={style.bottom_text}>Обращаем ваше внимание, что заказ услуги возможен только<br></br> через наш сайт после регистрации</p>
+      {/* <p className={style.bottom_text}>Обращаем ваше внимание, что заказ услуги возможен только<br></br> через наш сайт после регистрации</p> */}
     </div>
   )
 }

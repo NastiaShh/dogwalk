@@ -17,6 +17,9 @@ import FormStepper from './components/FormStepper'
 import DogPage from '../DogsData/Page/DogPage';
 import dogIcon from './icons/dogIcon.svg';
 import plusIcon from './icons/plusIcon.svg';
+import UserData from '../UserData/UserData';
+import UserNavbar from '../../admin/UserNavbar';
+import Footer from '../../footer/Footer';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -88,30 +91,34 @@ export default function ProfilePage(): JSX.Element {
   };
 
   return (
+    <>
+    <UserNavbar/>
     <div className={style.page}>
       <div className={style.container}>
         <div className={style.tabs}>
           <div className={`${style.tabLabel} ${style.userPageLabel}`} title='userPage' onClick={handleTabChange}>Основные данные</div>
           <div className={`${style.tabLabel} ${style.dogPageLabel}`} title='dogPage' onClick={handleTabChange}>Мои собаки</div>
-          <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}><img className={style.dogIcon} src={dogIcon} alt='dog'/>Сирена</div>
+          <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}><img className={style.dogIcon} src={dogIcon} alt='dog' />Сирена</div>
           <img className={style.plusIcon} src={plusIcon} alt='plus' />
         </div>
         <div className={style.content}>
           {selectedTab === 'userPage' && (
             <>
-            <h3>Основные данные</h3>
-            {/* <DogPage /> */}
+              <h3>Основные данные</h3>
+              <UserData />
             </>
           )}
           {selectedTab === 'dogPage' && (
             <>
-            <h3>Мои собаки</h3>
-            <FormStepper />
-            {/* <DogPage /> */}
+              <h3>Мои собаки</h3>
+              <FormStepper />
+              {/* <DogPage /> */}
             </>
-          )}          
+          )}
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
