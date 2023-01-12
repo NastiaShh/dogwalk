@@ -4,12 +4,12 @@ import { login } from '../authSlice';
 import style from './LoginForm.module.css';
 import { LoggedUser } from '../types/UserState';
 import { useSelector } from 'react-redux';
-import { selectLoginError } from '../selectors';
+import { selectAuthError } from '../selectors';
 
 function LoginForm(): JSX.Element {
   const dispatch = useAppDispatch();
 
-  const loginError = useSelector(selectLoginError);
+  const authError = useSelector(selectAuthError);
 
   const {
     register,
@@ -28,7 +28,7 @@ function LoginForm(): JSX.Element {
 
   return (
     <form onSubmit={handleFormSubmit} className={style.container}>
-      {loginError && <div className={style.error}>{loginError}</div>}
+      {authError && <div className={style.error}>{authError}</div>}
       <input
         type="text"
         id="email-input"

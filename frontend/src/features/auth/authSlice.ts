@@ -29,13 +29,13 @@ const authSlice = createSlice({
         state.user = user;
         state.authChecked = true;
         state.role = role;
-        state.registerError = undefined;
+        state.authError = undefined;
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.authChecked = false;
         state.user = undefined;
         state.role = '';
-        state.registerError = action.error.message;
+        state.authError = action.error.message;
       })
       .addCase(login.fulfilled, (state, action) => {
         const user = action.payload;
@@ -43,13 +43,13 @@ const authSlice = createSlice({
         state.user = user;
         state.authChecked = true;
         state.role = role;
-        state.loginError = undefined;
+        state.authError = undefined;
       })
       .addCase(login.rejected, (state, action) => {
         state.authChecked = false;
         state.user = undefined;
         state.role = '';
-        state.loginError = action.error.message;
+        state.authError = action.error.message;
       })
       .addCase(logout.fulfilled, (state, action) => {
         state.authChecked = false;

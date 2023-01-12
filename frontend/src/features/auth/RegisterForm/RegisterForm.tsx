@@ -4,12 +4,12 @@ import { registerUser } from '../authSlice';
 import style from './RegisterForm.module.css';
 import { RegisteredUser } from '../types/UserState';
 import { useSelector } from 'react-redux';
-import { selectRegisterError } from '../selectors';
+import { selectAuthError } from '../selectors';
 
 function RegisterForm(): JSX.Element {
   const dispatch = useAppDispatch();
 
-  const registerError = useSelector(selectRegisterError);
+  const authError = useSelector(selectAuthError);
 
   const {
     register,
@@ -28,7 +28,7 @@ function RegisterForm(): JSX.Element {
 
   return (
     <form onSubmit={handleFormSubmit} className={style.container}>
-      {registerError && <div className={style.error}>{registerError}</div>}
+      {authError && <div className={style.error}>{authError}</div>}
       <input
         type="text"
         id="name-input"
