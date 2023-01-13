@@ -10,12 +10,13 @@ import Recommendations from "../Recommendations/Recommendations";
 import Dog from '../types/Dog'
 
 
-function DogPage({activeStep}: {activeStep: number}): JSX.Element {
+function DogPage({activeStep, selectedDogName}: {activeStep: number, selectedDogName: string}): JSX.Element {
   const dispatch = useAppDispatch()
-  const { register, handleSubmit, setValue } = useForm<Dog>();
+  const { register, handleSubmit, setValue, reset } = useForm<Dog>();
 
   const onSubmit = (data: Dog): void => {
     dispatch(createDog(data))
+    reset()
   }
 
   const { dogs } = useSelector((state: RootState) => state.dogs)
@@ -33,13 +34,13 @@ function DogPage({activeStep}: {activeStep: number}): JSX.Element {
         <DogQuestions register={register} />
         <Recommendations register={register} /> */}
         {activeStep === 0 && (
-          <DogInfo register={register} />
+          <DogInfo register={register} selectedDogName={selectedDogName}/>
         )}
         {activeStep === 1 && (
-          <DogQuestions register={register} />
+          <DogQuestions register={register} selectedDogName={selectedDogName}/>
         )}
         {activeStep === 2 && (
-          <Recommendations register={register} />
+          <Recommendations register={register} selectedDogName={selectedDogName}/>
         )}
       </form>
     </>

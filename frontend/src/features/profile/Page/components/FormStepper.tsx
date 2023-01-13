@@ -22,7 +22,7 @@ import style from './FormStepper.module.css';
 
 const steps = ['Dog info', 'Dog Questions', 'Recommendations'];
 
-export default function FormStepper(): JSX.Element {
+export default function FormStepper({selectedDogName}: {selectedDogName: string}): JSX.Element {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState<{
     [k: number]: boolean;
@@ -152,7 +152,7 @@ export default function FormStepper(): JSX.Element {
           </React.Fragment>
         ) : (
           <React.Fragment>            
-            <DogPage activeStep={activeStep}/>
+            <DogPage activeStep={activeStep} selectedDogName={selectedDogName}/>
 
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', pt: 2, gap: '0.6em', marginBottom: '2em' }}>
               <button

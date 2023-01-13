@@ -45,6 +45,7 @@
 .dogPageLabel {
   color: #000;
   margin-bottom: 0.8em;
+  cursor: auto;
 }
 
 .dogIcon {
@@ -56,10 +57,19 @@
 .dogLabel {
   font-size: 0.8em;
   color: #808080;
+  /* margin-bottom: 0.8em; */
 }
 
 .plusIcon {
   width: 1.7em;
   margin-top: 0.7em;
   margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.dogsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  /* padding-bottom: 1em; */
 }
