@@ -9,7 +9,7 @@ function DogInfo({ register, selectedDogName }: { register: UseFormRegister<Dog>
   const dog = dogs.filter((dog) => dog.name === selectedDogName)[0];
 
   return (
-    <div className={style.container}>x
+    <div className={style.container}>
       <div className={style.parameter}>
         <label htmlFor="name">Имя собаки</label>
         <input
