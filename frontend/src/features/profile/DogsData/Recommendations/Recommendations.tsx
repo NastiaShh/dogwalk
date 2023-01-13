@@ -15,8 +15,7 @@ function Recommendations({ register, selectedDogName }: { register: UseFormRegis
 
   return (
     <div className={style.container}>
-      {click === false && (
-        <>
+        <div style={{display: click === true ? 'none' : 'flex', flexDirection: 'column'}}>
         <p className={style.title}>Рекомендации по прогулкам/передержке</p>
         <textarea
           {...register("description")}
@@ -28,8 +27,7 @@ function Recommendations({ register, selectedDogName }: { register: UseFormRegis
         <button type="submit" className={style.buttonNext} onClick={() => setClick((p) => (!p))}>
           готово
         </button>
-        </>
-      )}
+        </div>
 
       {/* <>
       <p className={style.title}>Рекомендации по прогулкам/передержке</p>
