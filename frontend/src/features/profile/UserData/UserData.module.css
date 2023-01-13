@@ -1,6 +1,9 @@
 .container {
   margin: 50px auto;
+  padding: 40px 0;
   width: 78%;
+  border: 2px solid #ff9a16;
+  border-radius: 17px;
 }
 
 .parameter {

@@ -73,3 +73,7 @@
   gap: 0.7em;
   /* padding-bottom: 1em; */
 }
+
+.title {
+  margin-top: 50px;
+}
