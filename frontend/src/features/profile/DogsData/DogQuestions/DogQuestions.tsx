@@ -10,73 +10,74 @@ function DogQuestions({ register, selectedDogName }: { register: UseFormRegister
   
   return (
     <div className={style.container}>
-      <p className={style.parameterTitle}>Пол</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("gender")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Девочка</label>
+        <p>Пол</p>
+        {/* <input type="radio" id="female" {...register("gender")} className={style.inputContainer} /> */}
+        <input type="text" id="gender" {...register("gender")} className={style.inputContainer} placeholder="мальчик / девочка" />
+        {/* <label htmlFor="gender" className={style.label}>Девочка</label>
 
         <input type="radio" id="male" {...register("gender")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>Мальчик</label>
+        <label htmlFor="male" className={style.label}>Мальчик</label> */}
       </div>
 
-      <p className={style.parameterTitle}>Ваша собака стерилизована?</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("sterilization")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Да</label>
+        <p>Ваша собака стерилизована?</p>
+        <input type="text" id="female" {...register("sterilization")} className={style.inputContainer} placeholder="да / нет / не знаю точно" />
+        {/* <label htmlFor="female" className={style.label}>Да</label>
 
         <input type="radio" id="male" {...register("sterilization")} className={style.inputContainer} />
         <label htmlFor="male" className={style.label}>Нет</label>
 
         <input type="radio" id="male" {...register("sterilization")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>Не знаю точно</label>
+        <label htmlFor="male" className={style.label}>Не знаю точно</label> */}
       </div>
 
-      <p className={style.parameterTitle}>Ваша собака дружелюбна к другм собакам?</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("dog_friendly")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Да</label>
+        <p>Ваша собака дружелюбна к другм собакам?</p>
+        <input type="text" id="female" {...register("dog_friendly")} className={style.inputContainer} placeholder="да / нет / не знаю точно" />
+        {/* <label htmlFor="female" className={style.label}>Да</label>
 
         <input type="radio" id="male" {...register("dog_friendly")} className={style.inputContainer} />
         <label htmlFor="male" className={style.label}>Нет</label>
 
         <input type="radio" id="male" {...register("dog_friendly")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>Не знаю точно</label>
+        <label htmlFor="male" className={style.label}>Не знаю точно</label> */}
       </div>
 
-      <p className={style.parameterTitle}>Ваша собака дружелюбна к кошкам?</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("cat_friendly")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Да</label>
+        <p>Ваша собака дружелюбна к кошкам?</p>
+        <input type="text" id="female" {...register("cat_friendly")} className={style.inputContainer} placeholder="да / нет / не знаю точно" />
+        {/* <label htmlFor="female" className={style.label}>Да</label>
 
         <input type="radio" id="male" {...register("cat_friendly")} className={style.inputContainer} />
         <label htmlFor="male" className={style.label}>Нет</label>
 
         <input type="radio" id="male" {...register("cat_friendly")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>Не знаю точно</label>
+        <label htmlFor="male" className={style.label}>Не знаю точно</label> */}
       </div>
 
-      <p className={style.parameterTitle}>Остается ли собака дома одна?</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("home")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Да, пока я на работе</label>
+        <p>Остается ли собака дома одна?</p>
+        <input type="text" id="female" {...register("home")} className={style.inputContainer} placeholder="да, пока я на работе" />
+        {/* <label htmlFor="female" className={style.label}>Да, пока я на работе</label>
 
         <input type="radio" id="male" {...register("home")} className={style.inputContainer} />
         <label htmlFor="male" className={style.label}>Да, на пару часов</label>
 
         <input type="radio" id="male" {...register("home")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>С собакой всегда кто&#8209;то&nbsp;дома</label>
+        <label htmlFor="male" className={style.label}>С собакой всегда кто&#8209;то&nbsp;дома</label> */}
       </div>
 
-      <p className={style.parameterTitle}>Собака вакцинирована?</p>
       <div className={style.parameterContainer}>
-        <input type="radio" id="female" {...register("vaccination")} className={style.inputContainer} />
-        <label htmlFor="female" className={style.label}>Да</label>
+        <p>Собака вакцинирована?</p>
+        <input type="text" id="female" {...register("vaccination")} className={style.inputContainer} placeholder="да / нет / не знаю точно" />
+        {/* <label htmlFor="female" className={style.label}>Да</label>
 
         <input type="radio" id="male" {...register("vaccination")} className={style.inputContainer} />
         <label htmlFor="male" className={style.label}>Нет</label>
 
         <input type="radio" id="male" {...register("vaccination")} className={style.inputContainer} />
-        <label htmlFor="male" className={style.label}>Не знаю точно</label>
+        <label htmlFor="male" className={style.label}>Не знаю точно</label> */}
       </div>
     </div>
   )
