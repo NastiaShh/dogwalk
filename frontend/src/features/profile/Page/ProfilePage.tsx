@@ -127,19 +127,19 @@ export default function ProfilePage(): JSX.Element {
         <div className={style.content}>
           {selectedTab === 'userPage' && (
             <>
-              <h2>Основные данные</h2>
+              <h2 className={style.title}>Основные данные</h2>
               <UserData />
             </>
           )}
           {selectedTab === 'dogPage' && (
             <>
-              <h3>Мои собаки</h3>
+              <h2 className={style.title}>Мои собаки</h2>
               <FormStepper selectedDogName={''}/>
             </>
           )}
           {selectedTab === 'dogInfo' && (
             <>
-              <h3>Мои собаки</h3>
+              <h2 className={style.title}>Мои собаки</h2>
               <FormStepper selectedDogName={selectedDogName}/>
             </>
           )}
