@@ -39,6 +39,12 @@
   font-size: 0.75em;
 }
 
+@media (min-width: 1681px) {
+  .avatarImg {
+    width: 4.5em;
+  }
+}
+
 @media (min-width: 1600px) and (max-width: 1680px) {
   .card {
     width: 20vw;

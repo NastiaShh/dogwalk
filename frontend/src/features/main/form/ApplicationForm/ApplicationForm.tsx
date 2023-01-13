@@ -21,7 +21,7 @@ function ApplicationForm(): JSX.Element {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.container} id='form'>
-      <h1>Записаться на консультацию</h1>
+      <h1 className={style.title}>Записаться на консультацию</h1>
       {authChecked ? (
         <UserForm register={register} />
       ) : (
