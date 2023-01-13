@@ -1,3 +1,8 @@
+.title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
 .container {
   background-color: #f8efe8;
   padding-top: 3vh;
