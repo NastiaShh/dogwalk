@@ -34,8 +34,11 @@ function WalkRequest({ request }: RequestProps): JSX.Element {
         </div>
       </div>
       <div className={style.buttons}>
-        {request.status !== 'завершено' && (
-          <button className={style.btnChange} onClick={() => dispatch(changeRequest(request))}>изменить</button>
+        {request.status === 'не обработано' && (
+          <button className={style.btnChange} onClick={() => dispatch(changeRequest(request))}>в работу</button>
+        )}
+        {request.status === 'в работе' && (
+          <button className={style.btnChange} onClick={() => dispatch(changeRequest(request))}>завершить</button>
         )}
         <button className={style.btnDelete} onClick={() => dispatch(deleteRequest(request))}>удалить</button>
 
