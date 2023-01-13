@@ -131,7 +131,7 @@ export default function ProfilePage(): JSX.Element {
               <UserData />
             </>
           )}
-          {selectedTab === 'dogPage' && (
+          {selectedTab === 'dogPage' || selectedTab === 'dogInfo' && (
             <>
               <h3>Мои собаки</h3>
               <FormStepper selectedDogName={''}/>
