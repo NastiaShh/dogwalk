@@ -23,12 +23,12 @@ const MyToggleButton = styled(ToggleButton)(
 
     &.${toggleButtonClasses.selected} {
       background-color: #398a6a ;
-      color: #000;
+      color: #fff;
     }
 
     &.${toggleButtonClasses.selected}:hover {
       background-color: #398a6a ;
-      color: #000;
+      color: #fff;
     }
   `,
 );
@@ -60,7 +60,6 @@ export default function WalkDurationToggle(): JSX.Element {
   return (
     <div className={style.container}>
       <MyToggleButtonGroup
-        color="primary"
         value={walkPrice}
         exclusive
         onChange={handleChange}

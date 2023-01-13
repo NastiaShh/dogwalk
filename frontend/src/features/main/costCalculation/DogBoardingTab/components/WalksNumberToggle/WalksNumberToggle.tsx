@@ -22,11 +22,12 @@ const MyToggleButton = styled(ToggleButton)(
 
     &:hover {
       background-color: #398a6a;
+      color: #fff;
     }
 
     &.${toggleButtonClasses.selected} {
       background-color: #398a6a;
-      color: #000;
+      color: #fff;
     }
 
     &.${toggleButtonClasses.selected}:hover {
