@@ -1,4 +1,8 @@
 .nav {
+  display: flex;
+  padding: 30px 5vw 0;
+  gap: 20px;
+  justify-content: flex-end;
   background-color: #f8efe8;
   height: 40px;
   align-items: center;
