@@ -3,11 +3,13 @@ import Dog from '../types/Dog'
 import style from './Recommendations.module.css';
 import { useSelector } from 'react-redux';
 import { selectDog } from '../../selectors';
+import { useState } from "react";
 
 function Recommendations({ register, selectedDogName }: { register: UseFormRegister<Dog>, selectedDogName: string }): JSX.Element {
+  const [click, setClick] = useState(false);
   const dogs = useSelector(selectDog);
   const dog = dogs.filter((dog) => dog.name === selectedDogName)[0];
-  
+
   return (
     <div className={style.container}>
       <p className={style.title}>Рекомендации по прогулкам/передержке</p>
@@ -18,9 +20,12 @@ function Recommendations({ register, selectedDogName }: { register: UseFormRegis
           режим питания, состояние здоровья и другие рекомендации)"
         defaultValue={dog ? dog.description : ''}
       />
-      <button type="submit" className={style.buttonNext}>
+      <button type="submit" className={style.buttonNext} onClick={() => setClick((p) => (!p))}>
         готово
       </button>
+      {click === true && (
+        <p className={style.bottom_text}>Ваш питомец успешно сохранен</p>
+      )}
     </div>
   );
 }
