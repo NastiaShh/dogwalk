@@ -1,8 +1,10 @@
 import Request from '../types/Request'
 import { UseFormRegister } from "react-hook-form";
 import style from './UserForm.module.css';
+import { useState } from 'react';
 
-function UserForm({register}: {register: UseFormRegister<Request>}): JSX.Element {
+function UserForm({ register }: { register: UseFormRegister<Request> }): JSX.Element {
+  const [click, setClick] = useState(false);
   return (
     <div className={style.block}>
       <p className={style.text}>Остались вопросы или у Вас есть особые пожелания?<br></br>Заполните заявку и наш менеджер свяжется с Вами для уточнения всех деталей </p>
@@ -18,7 +20,7 @@ function UserForm({register}: {register: UseFormRegister<Request>}): JSX.Element
       />
       <input
         type="email"
-        placeholder="email"
+        placeholder="Email"
         {...register("email")}
       />
       <input
@@ -31,10 +33,12 @@ function UserForm({register}: {register: UseFormRegister<Request>}): JSX.Element
         placeholder="time"
         {...register("time")}
       />
-      <button type="submit" className={style.button}>
+      <button type="submit" className={style.button} onClick={() => setClick((p) => (!p))}>
         свяжитесь со мной
       </button>
-      {/* <p className={style.bottom_text}>Обращаем ваше внимание, что заказ услуги возможен только<br></br> через наш сайт после регистрации</p> */}
+      {click === true && (
+        <p className={style.bottom_text}>Ваша заявка успешно отправлена,<br></br> подождите пока с вами свяжется администратор</p>
+      )}
     </div>
   )
 }

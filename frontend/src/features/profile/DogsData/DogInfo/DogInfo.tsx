@@ -15,7 +15,6 @@ function DogInfo({ register, selectedDogName }: { register: UseFormRegister<Dog>
         <input
           type="text"
           placeholder="Шарик"
-          className={style.input}
           {...register("name")}
           defaultValue={dog ? dog.name : ''}
         />
@@ -25,7 +24,6 @@ function DogInfo({ register, selectedDogName }: { register: UseFormRegister<Dog>
         <input
           type="text"
           placeholder="Сиба-ину"
-          className={style.input}
           {...register('breed')}
           defaultValue={dog ? dog.breed : ''}
         />
@@ -36,7 +34,7 @@ function DogInfo({ register, selectedDogName }: { register: UseFormRegister<Dog>
           <input
             type="number"
             placeholder="5"
-            className={`${style.input} ${style.ageInput}`}
+            className={style.ageInput}
             {...register('age')}
             defaultValue={dog ? dog.age : ''}
           />

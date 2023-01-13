@@ -1,4 +1,5 @@
 .container {
+  margin: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,6 +8,7 @@
 
 .parameterTitle {
   margin: 20px 0 10px;
+  font-weight: 600;
 }
 
 .parameterContainer {

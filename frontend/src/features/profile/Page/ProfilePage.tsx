@@ -127,7 +127,7 @@ export default function ProfilePage(): JSX.Element {
         <div className={style.content}>
           {selectedTab === 'userPage' && (
             <>
-              <h3>Основные данные</h3>
+              <h2>Основные данные</h2>
               <UserData />
             </>
           )}

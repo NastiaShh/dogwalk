@@ -47,11 +47,11 @@ export default function Questions(): JSX.Element {
           <h3 style={{ marginBottom: '10vh' }}>Возможно, у Вас возникли вопросы</h3>
           <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 8 }}>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}}/>}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
@@ -66,11 +66,11 @@ export default function Questions(): JSX.Element {
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}}/>}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
@@ -85,11 +85,11 @@ export default function Questions(): JSX.Element {
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}} />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
@@ -104,11 +104,11 @@ export default function Questions(): JSX.Element {
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}} />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
@@ -124,11 +124,11 @@ export default function Questions(): JSX.Element {
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}} />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
@@ -143,11 +143,11 @@ export default function Questions(): JSX.Element {
               </Accordion>
             </Grid>
             <Grid item xs={6}>
-              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch' }} 
+              <Accordion style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', color: '#f8efe8' }} 
                 sx={{ textAlign: 'left', paddingLeft: '1vw', minHeight: '14.8vh' }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={<AddIcon style={{color: '#f8efe8'}} />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
