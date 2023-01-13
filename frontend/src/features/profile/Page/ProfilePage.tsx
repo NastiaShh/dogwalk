@@ -94,7 +94,6 @@ export default function ProfilePage(): JSX.Element {
   const handleTabChange = (event: React.MouseEvent<HTMLSpanElement>): void => {
     setDogSelected(false);
     setSelectedTab(event.currentTarget.title);
-    console.log(selectedTab);
   };
 
   const handleDogClick = (event: React.MouseEvent<HTMLDivElement>): void => {
