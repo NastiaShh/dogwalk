@@ -20,6 +20,8 @@ import plusIcon from './icons/plusIcon.svg';
 import UserData from '../UserData/UserData';
 import UserNavbar from '../../admin/UserNavbar';
 import Footer from '../../footer/Footer';
+import { useSelector } from 'react-redux';
+import { selectDog } from '../selectors';
 
 const Tab = styled(TabUnstyled)`
   font-family: inherit;
@@ -85,9 +87,20 @@ const TabsContainer = styled(TabsUnstyled)(
 
 export default function ProfilePage(): JSX.Element {
   const [selectedTab, setSelectedTab] = React.useState('userPage');
+  const [dogSelected, setDogSelected] = React.useState(false);
+  const [selectedDogName, setSelectedDogName] = React.useState('');
+  const dogs = useSelector(selectDog);
 
   const handleTabChange = (event: React.MouseEvent<HTMLSpanElement>): void => {
+    setDogSelected(false);
     setSelectedTab(event.currentTarget.title);
+    console.log(selectedTab);
+  };
+
+  const handleDogClick = (event: React.MouseEvent<HTMLDivElement>): void => {
+    setDogSelected(true);
+    setSelectedDogName(event.currentTarget.id);
+    handleTabChange(event);
   };
 
   return (
@@ -98,8 +111,18 @@ export default function ProfilePage(): JSX.Element {
         <div className={style.tabs}>
           <div className={`${style.tabLabel} ${style.userPageLabel}`} title='userPage' onClick={handleTabChange}>Основные данные</div>
           <div className={`${style.tabLabel} ${style.dogPageLabel}`} title='dogPage' onClick={handleTabChange}>Мои собаки</div>
-          <div className={`${style.tabLabel} ${style.dogLabel}`} title='dogPage' onClick={handleTabChange}><img className={style.dogIcon} src={dogIcon} alt='dog' />Сирена</div>
-          <img className={style.plusIcon} src={plusIcon} alt='plus' />
+          <div className={style.dogsContainer}>
+          {dogs && (
+              dogs.map((dog) => (
+                <div className={`${style.tabLabel} ${style.dogLabel}`} id={dog.name} title='dogInfo' onClick={handleDogClick}>
+                  <img className={style.dogIcon} src={dogIcon} alt='dog' />
+                  {dog.name}
+                </div>
+              ))
+          )}
+          </div>
+          
+          <img title='dogPage' onClick={handleTabChange} className={style.plusIcon} src={plusIcon} alt='plus' />
         </div>
         <div className={style.content}>
           {selectedTab === 'userPage' && (
@@ -111,8 +134,13 @@ export default function ProfilePage(): JSX.Element {
           {selectedTab === 'dogPage' && (
             <>
               <h3>Мои собаки</h3>
-              <FormStepper />
-              {/* <DogPage /> */}
+              <FormStepper selectedDogName={''}/>
+            </>
+          )}
+          {selectedTab === 'dogInfo' && (
+            <>
+              <h3>Мои собаки</h3>
+              <FormStepper selectedDogName={selectedDogName}/>
             </>
           )}
         </div>

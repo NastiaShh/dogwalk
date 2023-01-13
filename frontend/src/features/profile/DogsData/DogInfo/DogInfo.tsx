@@ -1,8 +1,13 @@
 import { UseFormRegister } from "react-hook-form";
 import Dog from '../types/Dog'
 import style from './DogInfo.module.css'
+import { useSelector } from 'react-redux';
+import { selectDog } from '../../selectors';
 
-function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element {
+function DogInfo({ register, selectedDogName }: { register: UseFormRegister<Dog>, selectedDogName: string }): JSX.Element {
+  const dogs = useSelector(selectDog);
+  const dog = dogs.filter((dog) => dog.name === selectedDogName)[0];
+
   return (
     <div className={style.container}>
       <div className={style.parameter}>
@@ -12,6 +17,7 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
           placeholder="Шарик"
           className={style.input}
           {...register("name")}
+          defaultValue={dog ? dog.name : ''}
         />
       </div>
       <div className={style.parameter}>
@@ -21,6 +27,7 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
           placeholder="Сиба-ину"
           className={style.input}
           {...register('breed')}
+          defaultValue={dog ? dog.breed : ''}
         />
       </div>
       <div className={style.parameter}>
@@ -31,13 +38,14 @@ function DogInfo({ register }: { register: UseFormRegister<Dog> }): JSX.Element 
             placeholder="5"
             className={`${style.input} ${style.ageInput}`}
             {...register('age')}
+            defaultValue={dog ? dog.age : ''}
           />
           <span className={style.ageSpan}>лет</span>
         </div>
       </div>
       <div className={style.parameter}>
         <label htmlFor="size">Размер</label>
-        <select {...register('size')} className={style.sizeInput}>
+        <select {...register('size')} className={style.sizeInput} defaultValue={dog ? dog.size : ''}>
           <option value="маленькая">Маленькая</option>
           <option value="средняя" selected>Средняя</option>
           <option value="большая">Большая</option>
